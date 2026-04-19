@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>6-Week Hatha Immersion · Cassie · Kalyani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f9f6f1;
+      --dark: #1a1a18;
+      --muted: #7a7872;
+      --accent: #b5a898;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 3rem;
+      background: rgba(249, 246, 241, 0.85);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.15rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+
+    .nav-logo .star { font-size: 0.7rem; color: var(--muted); transform: translateY(-1px); }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--dark); }
+
+    /* ── HERO ── */
+    .imm-hero {
+      padding: 10rem 3rem 5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .imm-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .imm-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .imm-subtitle {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .imm-divider {
+      width: 32px;
+      height: 0.5px;
+      background: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .imm-intro {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .imm-cta-top {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--dark);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .imm-cta-top:hover { opacity: 0.8; }
+
+    /* meta box */
+    .imm-meta-box {
+      border: 0.5px solid var(--accent);
+      padding: 2rem;
+      position: sticky;
+      top: 8rem;
+    }
+
+    .imm-meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 1rem 0;
+      border-bottom: 0.5px solid #e8e2da;
+    }
+
+    .imm-meta-row:first-child { padding-top: 0; }
+    .imm-meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .imm-meta-label {
+      font-size: 0.5rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .imm-meta-value {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--dark);
+      font-style: italic;
+    }
+
+    /* ── FOR WHO ── */
+    .for-who {
+      padding: 5rem 3rem;
+      border-top: 0.5px solid #e8e2da;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .for-who-body {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      max-width: 600px;
+    }
+
+    .for-who-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .for-who-list li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .for-who-list li::before {
+      content: '✦';
+      font-size: 0.45rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.4rem;
+    }
+
+    /* ── CURRICULUM ── */
+    .curriculum {
+      padding: 5rem 3rem;
+      border-top: 0.5px solid #e8e2da;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .week-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2rem;
+    }
+
+    .week-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      padding: 1.8rem 0;
+      border-bottom: 0.5px solid #e8e2da;
+      align-items: start;
+    }
+
+    .week-item:last-child { border-bottom: none; }
+
+    .week-number {
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 0.2rem;
+    }
+
+    .week-content {}
+
+    .week-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .week-desc {
+      font-size: 0.8rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* ── PRICING ── */
+    .imm-pricing {
+      padding: 5rem 3rem;
+      border-top: 0.5px solid #e8e2da;
+      background: var(--dark);
+      text-align: center;
+    }
+
+    .imm-pricing .section-label { color: var(--accent); }
+    .imm-pricing .section-heading { color: var(--cream); margin-bottom: 1rem; }
+
+    .imm-price-amount {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .imm-price-unit {
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    .imm-price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      max-width: 320px;
+      margin: 0 auto 3rem;
+      text-align: left;
+    }
+
+    .imm-price-features li {
+      font-size: 0.8rem;
+      color: #8a8880;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .imm-price-features li::before {
+      content: '✦';
+      font-size: 0.4rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .imm-price-btn {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--cream);
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .imm-price-btn:hover { opacity: 0.8; }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 5rem 3rem;
+      border-top: 0.5px solid #e8e2da;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      padding: 1.5rem 0;
+      border-bottom: 0.5px solid #e8e2da;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-a {
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* ── WAITLIST ── */
+    .waitlist {
+      padding: 6rem 3rem;
+      border-top: 0.5px solid #e8e2da;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .waitlist-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .waitlist-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .waitlist-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .waitlist-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .waitlist-input {
+      background: none;
+      border: none;
+      border-bottom: 0.5px solid var(--accent);
+      outline: none;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--dark);
+      padding: 0.6rem 0;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .waitlist-input:focus { border-color: var(--dark); }
+    .waitlist-input::placeholder { color: #c8c0b4; }
+
+    .waitlist-btn {
+      background: var(--dark);
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--cream);
+      padding: 1rem 2rem;
+      transition: opacity 0.2s;
+      align-self: flex-start;
+    }
+
+    .waitlist-btn:hover { opacity: 0.75; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--accent);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+      text-decoration: none;
+    }
+
+    .footer-logo .star { font-size: 0.65rem; color: var(--muted); }
+
+    .footer-location {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
+
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+
+    .footer-links a {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--dark); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .imm-hero { grid-template-columns: 1fr; gap: 3rem; padding: 8rem 2rem 4rem; }
+      .imm-meta-box { position: static; }
+      .for-who, .curriculum, .faq, .waitlist { padding: 4rem 2rem; }
+      .imm-pricing { padding: 4rem 2rem; }
+      footer { padding: 2.5rem 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.5rem; }
+      .imm-hero { padding: 7rem 1.2rem 3rem; }
+      .imm-title { font-size: 1.8rem; }
+      .week-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .for-who, .curriculum, .faq, .waitlist { padding: 3rem 1.2rem; }
+      .imm-pricing { padding: 3rem 1.2rem; }
+      .imm-price-amount { font-size: 3.5rem; }
+      footer { flex-direction: column; padding: 2rem 1.2rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      Cassie <span class="star">✦</span> Kalyani
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#subscribe">Subscribe</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="imm-hero">
+    <div>
+      <p class="imm-label">Immersion · Fall 2026</p>
+      <h1 class="imm-title">Learn Hatha Yoga<br>from the Ground Up</h1>
+      <p class="imm-subtitle">A 6-week beginner immersion · Online & in person</p>
+      <div class="imm-divider"></div>
+      <p class="imm-intro">Whether you've tried yoga before and felt something — but never went deeper — or you've been curious for a while and simply don't know where to start, this course was made for you.</p>
+      <p class="imm-intro">Over six weeks we'll explore postures, breathing, and the everyday tools yoga offers to support your health, your nervous system, and your sense of self. We go slowly, intentionally, and always together.</p>
+      <a href="#waitlist" class="imm-cta-top">Join the waitlist</a>
+    </div>
+
+    <div class="imm-meta-box">
+      <div class="imm-meta-row">
+        <span class="imm-meta-label">Duration</span>
+        <span class="imm-meta-value">6 Weeks</span>
+      </div>
+      <div class="imm-meta-row">
+        <span class="imm-meta-label">Sessions</span>
+        <span class="imm-meta-value">Once a week · 90 min</span>
+      </div>
+      <div class="imm-meta-row">
+        <span class="imm-meta-label">Format</span>
+        <span class="imm-meta-value">Hybrid — online & in person</span>
+      </div>
+      <div class="imm-meta-row">
+        <span class="imm-meta-label">Level</span>
+        <span class="imm-meta-value">Absolute beginners</span>
+      </div>
+      <div class="imm-meta-row">
+        <span class="imm-meta-label">Spots</span>
+        <span class="imm-meta-value">10 max</span>
+      </div>
+      <div class="imm-meta-row">
+        <span class="imm-meta-label">Start</span>
+        <span class="imm-meta-value">Late September / early October</span>
+      </div>
+      <div class="imm-meta-row">
+        <span class="imm-meta-label">Price</span>
+        <span class="imm-meta-value">$197 · full course</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOR WHO -->
+  <div class="for-who">
+    <p class="section-label">Who is this for</p>
+    <h2 class="section-heading">You don't need to know anything about yoga to join.</h2>
+    <p class="for-who-body">This course is for you if any of these sound familiar:</p>
+    <ul class="for-who-list">
+      <li>You've tried a yoga class before and liked it, but felt lost — and want to actually understand what you're doing and why.</li>
+      <li>You've heard yoga is good for stress, sleep, or your body — but you've never tried it and don't know where to begin.</li>
+      <li>You want to eventually go to a studio but feel intimidated — this will give you the foundation to walk in with confidence.</li>
+      <li>You're looking for something that goes beyond just exercise — a practice that touches your body, your breath, and your mind.</li>
+      <li>You want to learn in a small, supportive group where you won't feel judged or rushed.</li>
+    </ul>
+  </div>
+
+  <!-- CURRICULUM -->
+  <div class="curriculum">
+    <p class="section-label">The 6-week journey</p>
+    <h2 class="section-heading">What we'll cover together.</h2>
+    <div class="week-list">
+      <div class="week-item">
+        <span class="week-number">Week 1</span>
+        <div class="week-content">
+          <p class="week-title">What is Yoga?</p>
+          <p class="week-desc">An introduction to Hatha Yoga — its philosophy, its history, and why it's still relevant today. We'll start with breath awareness, explore a few gentle postures, and open and close with 3 Oms. No experience needed, just show up.</p>
+        </div>
+      </div>
+      <div class="week-item">
+        <span class="week-number">Week 2</span>
+        <div class="week-content">
+          <p class="week-title">The Breath</p>
+          <p class="week-desc">Pranayama — breathing practices — are at the heart of Hatha Yoga. This week we go deeper into the breath as a tool for calming the nervous system, building energy, and connecting body and mind. First introduction to Yoga Nidra.</p>
+        </div>
+      </div>
+      <div class="week-item">
+        <span class="week-number">Week 3</span>
+        <div class="week-content">
+          <p class="week-title">The Body</p>
+          <p class="week-desc">We explore the Sun Salutation slowly and mindfully — broken down step by step so you understand each movement. We'll talk about alignment, how to listen to your body, and why we always offer variations. Longer Yoga Nidra this week.</p>
+        </div>
+      </div>
+      <div class="week-item">
+        <span class="week-number">Week 4</span>
+        <div class="week-content">
+          <p class="week-title">The Mind</p>
+          <p class="week-desc">This week we introduce meditation — not as something complicated or mystical, but as a simple, practical tool you can use every day. We'll also touch on the 8 limbs of yoga and what it means to practice yoga off the mat.</p>
+        </div>
+      </div>
+      <div class="week-item">
+        <span class="week-number">Week 5</span>
+        <div class="week-content">
+          <p class="week-title">Coming Together</p>
+          <p class="week-desc">We start building a full class flow — connecting everything we've learned. Introduction to chanting and why sound is part of the practice. Longer meditation. This week things start to feel familiar.</p>
+        </div>
+      </div>
+      <div class="week-item">
+        <span class="week-number">Week 6</span>
+        <div class="week-content">
+          <p class="week-title">Integration & Arrival</p>
+          <p class="week-desc">A full traditional Hatha class — asana, pranayama, chanting, Yoga Nidra, and meditation — from start to finish. We celebrate what you've built and talk about where to go from here. You leave with a practice that's truly yours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="imm-pricing" id="pricing">
+    <p class="section-label">Investment</p>
+    <h2 class="section-heading">One price. The full experience.</h2>
+    <p class="imm-price-amount">$197</p>
+    <p class="imm-price-unit">full course · 6 sessions · 90 min each</p>
+    <ul class="imm-price-features">
+      <li>6 live sessions — online or in person</li>
+      <li>10 students max — small group setting</li>
+      <li>Trauma-informed teaching throughout</li>
+      <li>Asana, pranayama, Yoga Nidra & meditation</li>
+      <li>Access to session recordings</li>
+      <li>Support between sessions via email</li>
+    </ul>
+    <a href="#waitlist" class="imm-price-btn">Join the waitlist ✦</a>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <p class="section-label">Questions</p>
+    <h2 class="section-heading">Things people usually ask.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Do I need any yoga experience?</p>
+        <p class="faq-a">None at all. This course is designed specifically for people who are brand new to yoga. We start from zero and build gradually, so you'll never feel lost or left behind.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Do I need special equipment?</p>
+        <p class="faq-a">A yoga mat is helpful but not required for the first class. Comfortable clothes you can move in are all you need. If you join online, a quiet space at home works perfectly.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What if I miss a class?</p>
+        <p class="faq-a">Life happens. Sessions will be recorded so you can catch up at your own pace. That said, showing up live is where the real magic is — the group energy and live practice make a big difference.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is this physically demanding?</p>
+        <p class="faq-a">Not at all. We move slowly and mindfully. Every posture comes with variations so you can always choose what works for your body. There is no pushing, no competition, no pressure.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What does trauma-informed mean?</p>
+        <p class="faq-a">It means the class is taught with awareness that everyone carries their own history in their body. You're always in control — nothing is forced, options are always offered, and your boundaries are fully respected.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">When does it start?</p>
+        <p class="faq-a">The first cohort launches late September / early October. Exact dates will be confirmed with registered students. Join the waitlist to be first to know and secure your spot.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do I pay?</p>
+        <p class="faq-a">Once your spot is confirmed you'll receive a payment link via email. Payment is due before the first session to secure your place.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAITLIST -->
+  <div class="waitlist" id="waitlist">
+    <h2 class="waitlist-heading">Reserve your spot</h2>
+    <p class="waitlist-sub">Spots are limited to 10 students. Join the waitlist and I'll be in touch with dates, details, and next steps.</p>
+    <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+      <div class="waitlist-field">
+        <label class="waitlist-label">Name</label>
+        <input type="text" class="waitlist-input" placeholder="Your name" required />
+      </div>
+      <div class="waitlist-field">
+        <label class="waitlist-label">Email</label>
+        <input type="email" class="waitlist-input" placeholder="Your email" required />
+      </div>
+      <div class="waitlist-field">
+        <label class="waitlist-label">Online or in person?</label>
+        <select class="waitlist-input" required>
+          <option value="" disabled selected>Select your preference</option>
+          <option value="online">Online</option>
+          <option value="inperson">In person</option>
+          <option value="either">Either works for me</option>
+        </select>
+      </div>
+      <div class="waitlist-field">
+        <label class="waitlist-label">Anything you'd like me to know? (optional)</label>
+        <textarea class="waitlist-input" style="resize:none;height:80px;" placeholder="Any injuries, questions, or notes..."></textarea>
+      </div>
+      <button type="submit" class="waitlist-btn">Send my name ✦</button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <a href="index.html" class="footer-logo">
+        Cassie <span class="star">✦</span> Kalyani
+      </a>
+      <p class="footer-location">Based in New York</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#subscribe">Subscribe</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    function handleWaitlist(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.waitlist-btn');
+      btn.textContent = 'You\'re on the list ✦';
+      btn.style.opacity = '0.5';
+      btn.disabled = true;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cassie · Kalyani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f9f6f1;
+      --dark: #1a1a18;
+      --muted: #7a7872;
+      --accent: #b5a898;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 3rem;
+      background: rgba(249, 246, 241, 0.85);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.15rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+
+    .nav-logo .star {
+      font-size: 0.7rem;
+      color: var(--muted);
+      transform: translateY(-1px);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--dark); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+    }
+
+    .hero-site-name {
+      font-family: var(--font-sans);
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Website name with middle dot */
+    .site-name-text::after {
+      content: " · ";
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+      max-width: 900px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hero-title .star {
+      font-size: 0.35em;
+      color: var(--muted);
+      transform: translateY(-4px);
+    }
+
+    .hero-tags {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-tags span {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--accent);
+    }
+
+    .hero-location {
+      margin-top: 1rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero-cta {
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .hero-cta-dot {
+      font-size: 0.45rem;
+      color: var(--accent);
+    }
+
+    .hero-cta a {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--dark);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .hero-cta a:hover {
+      color: var(--muted);
+      border-color: var(--muted);
+    }
+
+    /* ── HERO IMAGE ── */
+    .hero-image {
+      width: min(420px, 90vw);
+      margin-top: 4rem;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      padding: 8rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-body-italic {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--muted);
+      font-style: italic;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-body {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .about-read-more {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: underline;
+      font-weight: 400;
+      transition: opacity 0.2s;
+    }
+
+    .about-read-more:hover { opacity: 0.6; }
+
+    .about-name {
+      margin-top: 2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    /* ── ACTIVITIES ── */
+    .activities {
+      padding: 3rem 3rem;
+      background: var(--dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .activity {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.15em;
+      text-transform: lowercase;
+      font-style: italic;
+    }
+
+    .activity-sep {
+      font-size: 0.45rem;
+      color: var(--accent);
+      opacity: 0.7;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      padding: 8rem 3rem 2.5rem;
+      text-align: center;
+    }
+
+    .contact-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--dark);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-socials {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-socials a {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 0.5px solid transparent;
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+
+    .contact-socials a:hover {
+      color: var(--dark);
+      border-color: var(--dark);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--accent);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-location {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+
+    .footer-logo .star {
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+
+    .footer-logo .star {
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    /* Website name in footer uses middle dot */
+    .footer-site-name {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--dark); }
+
+    .footer-socials {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    .footer-socials a {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover { color: var(--dark); }
+
+    .footer-ryt {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.5rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--accent);
+      padding-bottom: 1px;
+      transition: opacity 0.2s;
+    }
+
+    .footer-ryt:hover { opacity: 0.7; }
+
+    /* ── HERO TABS ── */
+    .hero-tabs {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .hero-tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0; right: 0;
+      height: 0.5px;
+      background: var(--cream);
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+
+    .hero-tab-btn:hover { color: var(--dark); }
+
+    .hero-tab-btn.active {
+      color: var(--dark);
+    }
+
+    .hero-tab-btn.active::after {
+      transform: scaleX(1);
+      background: var(--dark);
+    }
+
+    .hero-tab-dot {
+      color: var(--accent);
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
+    /* ── CLASSES TABS ── */
+    .classes {
+      padding: 6rem 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .classes-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-bottom: 0.5px solid var(--accent);
+      margin-bottom: 4rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 1rem 2.5rem;
+      position: relative;
+      transition: color 0.25s;
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--dark);
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+
+    .tab-btn:hover { color: var(--dark); }
+
+    .tab-btn.active {
+      color: var(--dark);
+    }
+
+    .tab-btn.active::after {
+      transform: scaleX(1);
+    }
+
+    .tab-panel {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-panel.active {
+      display: grid;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-photo {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--accent);
+    }
+
+    .tab-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+    }
+
+    .tab-photo .placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e8e2da;
+    }
+
+    .tab-photo .placeholder span {
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .tab-content {}
+
+    .tab-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.15;
+    }
+
+    .tab-divider {
+      width: 32px;
+      height: 0.5px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-desc {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .tab-cta {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--dark);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .tab-cta:hover {
+      color: var(--muted);
+      border-color: var(--muted);
+    }
+
+    .htab-coming {
+      display: inline-block;
+      font-size: 0.5rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 0.5px solid var(--accent);
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .immersion-coming {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    /* ── FORMAT CARDS ── */
+    .format-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .format-card {
+      border: 0.5px solid var(--accent);
+      padding: 1.2rem 1.4rem;
+      transition: border-color 0.2s;
+    }
+
+    .format-card:hover { border-color: var(--dark); }
+
+    .format-card-featured {
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .format-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 0.5px solid #e8e2da;
+    }
+
+    .format-card-featured .format-header {
+      border-color: #3a3a36;
+    }
+
+    .format-name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--dark);
+      letter-spacing: 0.05em;
+    }
+
+    .format-card-featured .format-name { color: var(--cream); }
+
+    .format-duration {
+      font-size: 0.5rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .format-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .format-list li {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .format-list li::before {
+      content: '✦';
+      font-size: 0.4rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .format-card-featured .format-list li { color: #8a8880; }
+
+    /* ── HERO TAB CONTENT ── */
+    .hero-tab-content {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 3rem;
+    }
+
+    .htab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .htab-panel.active { display: block; }
+
+    .htab-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      text-align: left;
+    }
+
+    .htab-photo {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .htab-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      background: #e8e2da;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .htab-placeholder span {
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .htab-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .htab-divider {
+      width: 32px;
+      height: 0.5px;
+      background: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .htab-desc {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .htab-cta {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--dark);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .htab-cta:hover { color: var(--muted); border-color: var(--muted); }
+
+    /* pricing inside hero */
+    #htab-pricing { text-align: left; }
+    #htab-pricing .pricing-top { margin-bottom: 3rem; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── WHY HATHA ── */
+    .why-hatha {
+      padding: 8rem 3rem;
+      border-top: 0.5px solid #e8e2da;
+    }
+
+    .why-hatha-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .why-hatha-left {
+      position: sticky;
+      top: 8rem;
+    }
+
+    .why-hatha-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .why-hatha-moon {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-left: 0.3rem;
+    }
+
+    .why-hatha-lotus {
+      font-size: 1.4rem;
+      margin-top: 1.2rem;
+      line-height: 1;
+    }
+
+    .why-hatha-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2.4rem;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .why-hatha-divider {
+      width: 32px;
+      height: 0.5px;
+      background: var(--accent);
+    }
+
+    .why-hatha-body {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .why-hatha-body:last-child { margin-bottom: 0; }
+
+    /* ── IMMERSIONS ── */
+    .immersions {
+      padding: 8rem 3rem;
+      background: #1a1a18;
+      text-align: center;
+    }
+
+    .immersions-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .immersions-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--cream);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .immersions-sub {
+      font-size: 0.75rem;
+      line-height: 1.8;
+      color: var(--accent);
+      max-width: 460px;
+      margin: 0 auto 4rem;
+      letter-spacing: 0.05em;
+    }
+
+    .immersion-card {
+      max-width: 780px;
+      margin: 0 auto;
+      border: 0.5px solid #3a3a36;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      text-align: left;
+      transition: border-color 0.3s;
+    }
+
+    .immersion-card:hover { border-color: var(--accent); }
+
+    .immersion-photo {
+      aspect-ratio: 3/4;
+      background: #2a2a26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .immersion-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .immersion-photo-placeholder {
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #5a5a56;
+    }
+
+    .immersion-body {
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .immersion-meta {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .immersion-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .meta-label {
+      font-size: 0.5rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #5a5a56;
+    }
+
+    .meta-value {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--cream);
+      font-style: italic;
+    }
+
+    .immersion-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2rem;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .immersion-subtitle {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .immersion-divider {
+      width: 32px;
+      height: 0.5px;
+      background: #3a3a36;
+      margin-bottom: 1.5rem;
+    }
+
+    .immersion-desc {
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: #8a8880;
+      margin-bottom: 2.5rem;
+      flex: 1;
+    }
+
+    .immersion-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 0.5px solid #2a2a26;
+      padding-top: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .immersion-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .immersion-price-amount {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--cream);
+      font-weight: 300;
+    }
+
+    .immersion-price-unit {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #5a5a56;
+    }
+
+    .immersion-cta {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--cream);
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+
+    .immersion-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    .immersion-weeks {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .week-pill {
+      font-size: 0.5rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #5a5a56;
+      border: 0.5px solid #3a3a36;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .week-pill.active-week {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ── SCHEDULE & PRICING ── */
+    .pricing-panel {
+      display: none;
+      flex-direction: column;
+      gap: 3.5rem;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .pricing-panel.active { display: flex; }
+
+    .pricing-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .schedule-block {
+      border-top: 0.5px solid var(--accent);
+      padding-top: 2rem;
+    }
+
+    .schedule-block h3 {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .schedule-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 0.5px solid #e8e2da;
+    }
+
+    .schedule-row:last-child { border-bottom: none; }
+
+    .schedule-day {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    .schedule-time {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+
+    .karma-card {
+      border-style: dashed;
+    }
+
+    .price-card {
+      border: 0.5px solid var(--accent);
+      padding: 2rem 1.5rem;
+      position: relative;
+      transition: border-color 0.25s;
+    }
+
+    .price-card:hover { border-color: var(--dark); }
+
+    .price-card.featured {
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .price-badge {
+      font-size: 0.5rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .price-card.featured .price-badge { color: var(--accent); }
+
+    .price-name {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .price-card.featured .price-name { color: var(--cream); }
+
+    .price-amount {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .price-card.featured .price-amount { color: var(--cream); }
+
+    .price-unit {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .price-card.featured .price-unit { color: var(--accent); }
+
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .price-features li {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .price-card.featured .price-features li { color: #b5a898; }
+
+    .price-features li::before {
+      content: '✦';
+      font-size: 0.45rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .price-btn {
+      display: inline-block;
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--dark);
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+
+    .price-card.featured .price-btn {
+      color: var(--cream);
+      border-color: var(--cream);
+    }
+
+    .price-btn:hover { opacity: 0.6; }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 3rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .contact-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-label-field {
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-input {
+      background: none;
+      border: none;
+      border-bottom: 0.5px solid var(--accent);
+      outline: none;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--dark);
+      padding: 0.6rem 0;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .contact-input::placeholder { color: #c8c0b4; }
+    .contact-input:focus { border-color: var(--dark); }
+
+    .contact-textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .contact-select {
+      appearance: none;
+      cursor: pointer;
+      color: var(--dark);
+    }
+
+    .contact-select option[value=""][disabled] { color: #c8c0b4; }
+
+    .contact-submit {
+      align-self: flex-start;
+      background: var(--dark);
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--cream);
+      padding: 1rem 2rem;
+      transition: opacity 0.2s;
+    }
+
+    .contact-submit:hover { opacity: 0.75; }
+
+    /* ── SUBSCRIBE ── */
+    .subscribe {
+      padding: 5rem 3rem;
+      border-top: 0.5px solid #e8e2da;
+      border-bottom: 0.5px solid #e8e2da;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .subscribe-left {}
+
+    .subscribe-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .subscribe-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.8rem;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 0;
+      border-bottom: 0.5px solid var(--dark);
+      align-items: center;
+      min-width: 320px;
+    }
+
+    .subscribe-input {
+      background: none;
+      border: none;
+      outline: none;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--dark);
+      padding: 0.7rem 0;
+      flex: 1;
+      width: 100%;
+    }
+
+    .subscribe-input::placeholder {
+      color: var(--accent);
+      letter-spacing: 0.25em;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+    }
+
+    .subscribe-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dark);
+      padding: 0.7rem 0 0.7rem 1rem;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .subscribe-btn:hover { color: var(--muted); }
+
+    /* ── LAPTOP (≤1200px) ── */
+    @media (max-width: 1200px) {
+      .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); }
+      .immersion-card { gap: 0; }
+      .immersion-body { padding: 2rem 1.5rem; }
+      .pricing-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ── TABLET / IPAD (≤900px) ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .hero { padding: 5rem 1.5rem 3rem; }
+      .hero-title { font-size: clamp(2rem, 7vw, 4rem); }
+      .hero-tabs { gap: 0.6rem; }
+      .hero-tab-btn { font-size: 0.55rem; letter-spacing: 0.2em; }
+      .hero-tab-content { margin-top: 2rem; }
+      .htab-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .htab-photo { max-height: 340px; }
+      #about { grid-template-columns: 1fr; gap: 2rem; padding: 5rem 2rem; }
+      .why-hatha-inner { grid-template-columns: 1fr 1.5fr; gap: 3rem; }
+      .why-hatha { padding: 5rem 2rem; }
+      .immersion-card { grid-template-columns: 1fr; }
+      .immersion-body { padding: 2rem; }
+      .immersion-weeks { flex-wrap: wrap; }
+      .pricing-top { grid-template-columns: 1fr; }
+      .pricing-cards { grid-template-columns: repeat(2, 1fr); }
+      .format-cards { grid-template-columns: 1fr; }
+      .subscribe { flex-direction: column; align-items: flex-start; padding: 3rem 2rem; }
+      .subscribe-form { min-width: unset; width: 100%; }
+      .contact-form { padding: 0 0.5rem; }
+      .contact-row { grid-template-columns: 1fr; }
+      .immersions { padding: 5rem 2rem; }
+      footer { padding: 2.5rem 2rem; }
+    }
+
+    /* ── PHONE (≤480px) ── */
+    @media (max-width: 480px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-logo { font-size: 0.9rem; letter-spacing: 0.2em; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.5rem; letter-spacing: 0.25em; }
+      .hero { padding: 5rem 1.2rem 3rem; }
+      .hero-site-name { font-size: 0.5rem; letter-spacing: 0.3em; }
+      .hero-title { font-size: clamp(1.8rem, 8vw, 3rem); letter-spacing: 0.1em; }
+      .hero-tabs { gap: 0.4rem; flex-wrap: wrap; justify-content: center; }
+      .hero-tab-btn { font-size: 0.5rem; letter-spacing: 0.15em; }
+      .hero-tab-dot { font-size: 0.6rem; }
+      .hero-cta { flex-direction: column; gap: 0.8rem; align-items: center; }
+      .htab-title { font-size: 1.6rem; }
+      .htab-inner { gap: 1.5rem; }
+      #about { padding: 4rem 1.2rem; }
+      .about-heading { font-size: 1.8rem; }
+      .why-hatha-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .why-hatha { padding: 4rem 1.2rem; }
+      .why-hatha-heading { font-size: 1.8rem; }
+      .immersions { padding: 4rem 1.2rem; }
+      .immersions-heading { font-size: 1.8rem; }
+      .immersion-card { grid-template-columns: 1fr; }
+      .immersion-body { padding: 1.5rem 1.2rem; }
+      .immersion-title { font-size: 1.5rem; }
+      .immersion-weeks { flex-wrap: wrap; gap: 0.4rem; }
+      .week-pill { font-size: 0.45rem; padding: 0.25rem 0.6rem; }
+      .pricing-cards { grid-template-columns: 1fr; }
+      .pricing-top { grid-template-columns: 1fr; }
+      .activities { padding: 2rem 1.2rem; gap: 0.6rem; }
+      .subscribe { padding: 3rem 1.2rem; }
+      .subscribe-heading { font-size: 1.4rem; }
+      #contact { padding: 5rem 1.2rem 2.5rem; }
+      .contact-heading { font-size: 1.8rem; }
+      .contact-form { padding: 0; }
+      .contact-row { grid-template-columns: 1fr; }
+      .contact-submit { width: 100%; text-align: center; }
+      footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.2rem; gap: 1.5rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+      .format-cards { grid-template-columns: 1fr; }
+      .classes { padding: 4rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      Cassie <span class="star">✦</span> Kalyani
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#subscribe">Subscribe</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-site-name">Cassie · Kalyani</p>
+
+    <h1 class="hero-title">
+      Cassie <span class="star">✦</span> Kalyani
+    </h1>
+
+    <!-- Tab nav in hero -->
+    <div class="hero-tabs">
+      <button class="hero-tab-btn active" data-tab="hatha">Hatha Yoga</button>
+      <span class="hero-tab-dot">·</span>
+      <button class="hero-tab-btn" data-tab="prenatal">Prenatal & Postnatal</button>
+      <span class="hero-tab-dot">·</span>
+      <button class="hero-tab-btn" data-tab="kids">Kids Yoga</button>
+      <span class="hero-tab-dot">·</span>
+      <button class="hero-tab-btn" data-tab="pricing">Schedule & Pricing</button>
+    </div>
+
+    <!-- Tab content lives here, inside the hero -->
+    <div class="hero-tab-content">
+
+      <!-- Hatha Yoga -->
+      <div class="htab-panel active" id="htab-hatha">
+        <div class="htab-inner">
+          <div class="htab-photo">
+            <div class="htab-placeholder"><span>Your photo here</span></div>
+          </div>
+          <div class="htab-text">
+            <h2 class="htab-title">Hatha Yoga</h2>
+            <div class="htab-divider"></div>
+            <p class="htab-desc">Your description for Hatha Yoga goes here. Share what makes your classes unique, who they're for, and what students can expect. All classes are trauma-informed and offer variations throughout.</p>
+
+            <div class="format-cards">
+              <div class="format-card">
+                <div class="format-header">
+                  <span class="format-name">Morning Practice</span>
+                  <span class="format-duration">60 min · Weekly</span>
+                </div>
+                <ul class="format-list">
+                  <li>Asana</li>
+                  <li>Breathwork (Pranayama)</li>
+                  <li>Yoga Nidra</li>
+                  <li>Brief meditation</li>
+                  <li>3 Oms</li>
+                </ul>
+              </div>
+              <div class="format-card format-card-featured">
+                <div class="format-header">
+                  <span class="format-name">Deep Practice</span>
+                  <span class="format-duration">90 min · 1–2× month</span>
+                </div>
+                <ul class="format-list">
+                  <li>Asana</li>
+                  <li>Extended chanting</li>
+                  <li>Longer Yoga Nidra</li>
+                  <li>Full meditation</li>
+                  <li>The full Hatha experience</li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank" class="htab-cta">Book a class</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prenatal & Postnatal -->
+      <div class="htab-panel" id="htab-prenatal">
+        <div class="htab-inner">
+          <div class="htab-photo">
+            <div class="htab-placeholder"><span>Your photo here</span></div>
+          </div>
+          <div class="htab-text">
+            <span class="htab-coming">Waitlist open</span>
+            <h2 class="htab-title">Prenatal & Postnatal Yoga</h2>
+            <div class="htab-divider"></div>
+            <p class="htab-desc">Classes are currently being planned. If you're expecting or recently postpartum and would like to be notified when sessions open, let me know — I'd love to hear from you.</p>
+            <a href="#contact" class="htab-cta">I'm interested</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kids Yoga -->
+      <div class="htab-panel" id="htab-kids">
+        <div class="htab-inner">
+          <div class="htab-photo">
+            <div class="htab-placeholder"><span>Your photo here</span></div>
+          </div>
+          <div class="htab-text">
+            <span class="htab-coming">Waitlist open</span>
+            <h2 class="htab-title">Kids Yoga</h2>
+            <div class="htab-divider"></div>
+            <p class="htab-desc">Kids Yoga classes are in the works. If you're curious about bringing yoga to your little ones — or have questions about what to expect — reach out. Your interest helps shape when and how this launches.</p>
+            <a href="#contact" class="htab-cta">I'm interested</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule & Pricing -->
+      <div class="htab-panel" id="htab-pricing">
+        <div class="pricing-top">
+          <div class="schedule-block">
+            <h3>Weekly Schedule</h3>
+            <div class="schedule-row"><span class="schedule-day">Morning Practice</span><span class="schedule-time">60 min · Online · Weekly</span></div>
+            <div class="schedule-row"><span class="schedule-day">Deep Practice</span><span class="schedule-time">90 min · Online · 1–2× month</span></div>
+            <div class="schedule-row"><span class="schedule-day">Karma Class</span><span class="schedule-time">Free · Online · Monthly</span></div>
+            <div class="schedule-row"><span class="schedule-day">Prenatal & Postnatal</span><span class="schedule-time">Waitlist open</span></div>
+            <div class="schedule-row"><span class="schedule-day">Kids Yoga</span><span class="schedule-time">Waitlist open</span></div>
+          </div>
+        </div>
+        <div class="pricing-cards">
+          <div class="price-card">
+            <span class="price-badge">One class</span>
+            <p class="price-name">Single Class</p>
+            <p class="price-amount">$25</p>
+            <p class="price-unit">per class</p>
+            <ul class="price-features">
+              <li>Any class format</li>
+              <li>No commitment</li>
+              <li>Online via Zoom</li>
+            </ul>
+            <a href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank" class="price-btn">Book now</a>
+          </div>
+          <div class="price-card featured">
+            <span class="price-badge">Most popular</span>
+            <p class="price-name">Monthly</p>
+            <p class="price-amount">$120</p>
+            <p class="price-unit">per month · unlimited</p>
+            <ul class="price-features">
+              <li>Unlimited classes</li>
+              <li>Priority booking</li>
+              <li>Early access to new offerings</li>
+            </ul>
+            <a href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank" class="price-btn">Get started</a>
+          </div>
+          <div class="price-card">
+            <span class="price-badge">Coming soon</span>
+            <p class="price-name">Prenatal & Postnatal</p>
+            <p class="price-amount" style="font-size:1.6rem;">Waitlist</p>
+            <p class="price-unit">open now</p>
+            <ul class="price-features">
+              <li>For expecting & new moms</li>
+              <li>Small group setting</li>
+              <li>Be first to know</li>
+            </ul>
+            <a href="#contact" class="price-btn">Join the waitlist</a>
+          </div>
+          <div class="price-card">
+            <span class="price-badge">Coming soon</span>
+            <p class="price-name">Kids Yoga</p>
+            <p class="price-amount" style="font-size:1.6rem;">Waitlist</p>
+            <p class="price-unit">open now</p>
+            <ul class="price-features">
+              <li>For little ones</li>
+              <li>Playful & nurturing</li>
+              <li>Be first to know</li>
+            </ul>
+            <a href="#contact" class="price-btn">Join the waitlist</a>
+          </div>
+          <div class="price-card karma-card">
+            <span class="price-badge">Every month</span>
+            <p class="price-name">Karma Class</p>
+            <p class="price-amount" style="font-size:1.6rem;">Free</p>
+            <p class="price-unit">offered as seva (service)</p>
+            <ul class="price-features">
+              <li>Open to all</li>
+              <li>Sign up to receive the link</li>
+              <li>Once a month</li>
+              <li>15 spots · first come first served</li>
+            </ul>
+            <a href="#contact" class="price-btn">Stay informed</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end hero-tab-content -->
+
+    <div class="hero-cta">
+      <a href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank">Book a Class</a>
+      <span class="hero-cta-dot">✦</span>
+      <a href="https://www.youtube.com/@CassieOusta" target="_blank">Watch on YouTube</a>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div>
+      <p class="about-label">About</p>
+      <h2 class="about-heading">Cassie · Kalyāṇī</h2>
+      <p class="about-body-italic">Kalyāṇī is the Sanskrit spiritual name given to Cassie by her teachers — meaning auspicious, beautiful, and blessed.</p>
+      <p class="about-body">
+        Kalyāṇī is a 200-hour Hatha Yoga teacher trained at the Integral Yoga Institute, part of one of the oldest authentic yoga lineages in the West, rooted in the teachings of Swami Satchidananda. She is also trained in Prenatal and Kids Yoga, and teaches pranayama and meditation.
+      </p>
+      <a href="about.html" class="about-read-more">Read more</a>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- WHY HATHA -->
+  <section class="why-hatha">
+    <div class="why-hatha-inner">
+      <div class="why-hatha-left">
+        <p class="why-hatha-label">The practice</p>
+        <h2 class="why-hatha-heading">Why Hatha?</h2>
+        <div class="why-hatha-divider"></div>
+        <svg width="100%" viewBox="0 0 340 440" xmlns="http://www.w3.org/2000/svg" style="max-width:160px;margin-top:1rem;display:block;">
+          <g transform="translate(170,210)" stroke="#b5a898" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <g fill="#b5a898" stroke="none">
+              <path d="M-95,-60 L-93,-56 L-89,-54 L-93,-52 L-95,-48 L-97,-52 L-101,-54 L-97,-56 Z" opacity="0.7"/>
+              <path d="M95,-80 L96.5,-76.5 L100,-75 L96.5,-73.5 L95,-70 L93.5,-73.5 L90,-75 L93.5,-76.5 Z" opacity="0.6"/>
+              <path d="M-110,-10 L-108.5,-7 L-105.5,-5.5 L-108.5,-4 L-110,-1 L-111.5,-4 L-114.5,-5.5 L-111.5,-7 Z" opacity="0.5"/>
+              <path d="M110,10 L111.2,12.8 L114,14 L111.2,15.2 L110,18 L108.8,15.2 L106,14 L108.8,12.8 Z" opacity="0.6"/>
+              <path d="M-80,-130 L-78.5,-127 L-75.5,-125.5 L-78.5,-124 L-80,-121 L-81.5,-124 L-84.5,-125.5 L-81.5,-127 Z" opacity="0.5"/>
+              <path d="M70,-120 L71.2,-117.2 L74,-116 L71.2,-114.8 L70,-112 L68.8,-114.8 L66,-116 L68.8,-117.2 Z" opacity="0.7"/>
+              <path d="M-55,55 L-53.8,57.8 L-51,59 L-53.8,60.2 L-55,63 L-56.2,60.2 L-59,59 L-56.2,57.8 Z" opacity="0.4"/>
+              <path d="M60,50 L61.2,52.8 L64,54 L61.2,55.2 L60,58 L58.8,55.2 L56,54 L58.8,52.8 Z" opacity="0.5"/>
+              <circle cx="-120" cy="-50" r="1.5" opacity="0.4"/>
+              <circle cx="120" cy="-40" r="1" opacity="0.5"/>
+              <circle cx="-65" cy="-145" r="1.5" opacity="0.4"/>
+              <circle cx="65" cy="-140" r="1" opacity="0.3"/>
+              <circle cx="-100" cy="30" r="1" opacity="0.4"/>
+              <circle cx="85" cy="-110" r="1" opacity="0.5"/>
+              <circle cx="-88" cy="-105" r="1.5" opacity="0.4"/>
+            </g>
+            <text x="0" y="-112" text-anchor="middle" font-size="38" fill="#b5a898" stroke="none" opacity="0.9">☽</text>
+            <path d="M0,-88 C2,-93 7,-93 7,-88 C7,-83 2,-79 -2,-79 C-6,-79 -8,-84 -6,-88" stroke-width="1"/>
+            <circle cx="0" cy="-152" r="2" fill="#b5a898" stroke="none"/>
+            <circle cx="-32" cy="-130" r="1.5" fill="#b5a898" stroke="none"/>
+            <circle cx="32" cy="-130" r="1.5" fill="#b5a898" stroke="none"/>
+            <path d="M0,-85 C-8,-65 -8,-30 0,0 C8,-30 8,-65 0,-85" stroke-width="1"/>
+            <path d="M0,-20 C-12,-40 -22,-55 -18,-72 C-10,-58 -4,-40 0,-20" stroke-width="1"/>
+            <path d="M0,-20 C12,-40 22,-55 18,-72 C10,-58 4,-40 0,-20" stroke-width="1"/>
+            <path d="M0,0 C-20,-15 -45,-20 -55,-8 C-42,4 -22,4 0,0" stroke-width="1"/>
+            <path d="M0,0 C20,-15 45,-20 55,-8 C42,4 22,4 0,0" stroke-width="1"/>
+            <path d="M0,-5 C-18,-25 -42,-38 -48,-22 C-36,-8 -18,-2 0,-5" stroke-width="1"/>
+            <path d="M0,-5 C18,-25 42,-38 48,-22 C36,-8 18,-2 0,-5" stroke-width="1"/>
+            <path d="M-18,2 C-35,0 -65,5 -75,18 C-55,18 -35,12 -18,2" stroke-width="0.8"/>
+            <path d="M18,2 C35,0 65,5 75,18 C55,18 35,12 18,2" stroke-width="0.8"/>
+            <path d="M-78,18 C-40,10 40,10 78,18" stroke-width="0.8"/>
+            <line x1="0" y1="18" x2="0" y2="55" stroke-width="1"/>
+            <text x="0" y="75" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#b5a898" font-style="italic" stroke="none">breathe · soften · meditate</text>
+            <line x1="0" y1="88" x2="0" y2="145" stroke-width="0.8"/>
+            <line x1="-8" y1="100" x2="-8" y2="132" stroke-width="0.8"/>
+            <line x1="8" y1="100" x2="8" y2="132" stroke-width="0.8"/>
+            <circle cx="0" cy="95" r="2" fill="#b5a898" stroke="none"/>
+            <circle cx="0" cy="112" r="1.5" fill="#b5a898" stroke="none"/>
+            <circle cx="0" cy="126" r="1" fill="#b5a898" stroke="none"/>
+            <circle cx="0" cy="150" r="2.5" fill="#b5a898" stroke="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="why-hatha-right">
+        <p class="why-hatha-body">
+          Hatha Yoga is the traditional foundation of yoga as we know it — a practice passed down from teacher to student across thousands of years. Long before it became a fitness trend, it was a complete spiritual discipline: a system of postures, breathwork, chanting, deep relaxation (Yoga Nidra), and meditation.
+        </p>
+        <p class="why-hatha-body">
+          Hatha Yoga works with the body, the breath, and the mind — not as separate things, but as one integrated whole. Its ultimate aim is not flexibility or strength, but stillness. Because it is in stillness that something deeper becomes possible: the nervous system settles, the mind quiets, and you begin to access your inner self — a clearer, more grounded awareness of who you are and how you move through life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMMERSIONS -->
+  <section class="immersions">
+    <p class="immersions-label">More Offerings</p>
+    <h2 class="immersions-heading">Immersions</h2>
+    <p class="immersions-sub">Structured journeys for those ready to go beyond a single class — designed to build real practice, one week at a time.</p>
+
+    <div class="immersion-card">
+
+      <div class="immersion-photo">
+        <span class="immersion-photo-placeholder">Your photo here</span>
+      </div>
+
+      <div class="immersion-body">
+
+        <div>
+          <div class="immersion-meta">
+            <div class="immersion-meta-item">
+              <span class="meta-label">Duration</span>
+              <span class="meta-value">6 Weeks</span>
+            </div>
+            <div class="immersion-meta-item">
+              <span class="meta-label">Level</span>
+              <span class="meta-value">Beginner</span>
+            </div>
+            <div class="immersion-meta-item">
+              <span class="meta-label">Format</span>
+              <span class="meta-value">In-studio</span>
+            </div>
+            <div class="immersion-meta-item">
+              <span class="meta-label">Spots</span>
+              <span class="meta-value">10 max</span>
+            </div>
+          </div>
+
+          <p class="immersion-title">Learn Hatha Yoga<br>from the Ground Up</p>
+          <p class="immersion-subtitle">A 6-week beginner immersion</p>
+          <div class="immersion-divider"></div>
+
+          <div class="immersion-weeks">
+            <span class="week-pill active-week">Week 1 — What is Yoga?</span>
+            <span class="week-pill">Week 2 — The Breath</span>
+            <span class="week-pill">Week 3 — The Body</span>
+            <span class="week-pill">Week 4 — The Mind</span>
+            <span class="week-pill">Week 5 — Coming Together</span>
+            <span class="week-pill">Week 6 — Integration</span>
+          </div>
+
+          <p class="immersion-desc">
+            A small-group course built for absolute beginners. Over six weeks you'll learn the foundational postures of Hatha Yoga, develop a personal breath practice, and leave with the tools to continue on your own. No experience needed — just curiosity and an open mind. <a href="immersion.html" style="color:var(--accent);text-decoration:underline;font-size:0.75rem;letter-spacing:0.2em;">Learn more</a>
+          </p>
+        </div>
+
+        <div class="immersion-footer">
+          <div class="immersion-price">
+            <span class="immersion-price-amount">$197</span>
+            <span class="immersion-price-unit">full course · 6 sessions</span>
+          </div>
+          <a href="#contact" class="immersion-cta">Join the waitlist</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <div class="activities">
+    <span class="activity">breathe</span>
+    <span class="activity-sep">✦</span>
+    <span class="activity">connect</span>
+    <span class="activity-sep">✦</span>
+    <span class="activity">restore</span>
+    <span class="activity-sep">✦</span>
+    <span class="activity">relax</span>
+    <span class="activity-sep">✦</span>
+    <span class="activity">meditate</span>
+  </div>
+
+  <!-- SUBSCRIBE -->
+  <div class="subscribe" id="subscribe">
+    <div class="subscribe-left">
+      <p class="subscribe-label">Stay connected</p>
+      <h2 class="subscribe-heading">Notes on practice,<br>body & mind.</h2>
+    </div>
+    <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+      <input class="subscribe-input" type="email" placeholder="Your email" required />
+      <button class="subscribe-btn" type="submit">Subscribe ✦</button>
+    </form>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="contact-heading">Let's Connect</h2>
+    <form class="contact-form" onsubmit="handleContact(event)">
+      <div class="contact-row">
+        <div class="contact-field">
+          <label class="contact-label-field">Name</label>
+          <input type="text" class="contact-input" placeholder="Your name" required />
+        </div>
+        <div class="contact-field">
+          <label class="contact-label-field">Email</label>
+          <input type="email" class="contact-input" placeholder="Your email" required />
+        </div>
+      </div>
+      <div class="contact-field">
+        <label class="contact-label-field">I'm interested in</label>
+        <select class="contact-input contact-select" required>
+          <option value="" disabled selected>Select a class</option>
+          <option value="hatha">Hatha Yoga</option>
+          <option value="prenatal">Prenatal Yoga</option>
+          <option value="kids">Kids Yoga</option>
+          <option value="immersion">4-Week Beginner Immersion</option>
+          <option value="private">Private Session</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <div class="contact-field">
+        <label class="contact-label-field">Message</label>
+        <textarea class="contact-input contact-textarea" placeholder="Tell me what's on your mind…" required></textarea>
+      </div>
+      <button type="submit" class="contact-submit">Send Message ✦</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">
+        Cassie <span class="star">✦</span> Kalyani
+      </div>
+      <p class="footer-location">Based in New York</p>
+      <a href="https://yogaalliance.org/search-results/?q=kassiani%20ousta" target="_blank" class="footer-ryt">RYT-200 · Yoga Alliance</a>
+    </div>
+
+    <div>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#">Subscribe</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.tiktok.com/@cassieousta" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/cassieousta.kalyani/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@CassieOusta" target="_blank">YouTube</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    function switchTab(id) {
+      document.querySelectorAll('.hero-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.htab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+      document.getElementById('htab-' + id).classList.add('active');
+    }
+
+    document.querySelectorAll('.hero-tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchTab(this.getAttribute('data-tab'));
+      });
+    });
+
+    function handleContact(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.contact-submit');
+      btn.textContent = 'Sent ✦';
+      btn.style.opacity = '0.5';
+      btn.disabled = true;
+    }
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const email = e.target.querySelector('input[type="email"]').value;
+      window.open('https://cassie03.substack.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+    }
+  </script>
+</body>
+</html>
