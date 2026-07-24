@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <radialGradient id="bellyGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9956a" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#c9956a" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#c9956a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgGlow" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#1b1b35"/>
+      <stop offset="100%" stop-color="#0c0c20"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#bgGlow)"/>
+
+  <!-- Subtle aura behind figure -->
+  <ellipse cx="300" cy="400" rx="210" ry="260" fill="#c9956a" opacity="0.04"/>
+
+  <!-- ── SCATTERED STARS / DOTS ── -->
+  <g fill="#e8c4a0">
+    <circle cx="42"  cy="55"  r="2.2" opacity="0.7"/>
+    <circle cx="555" cy="75"  r="1.8" opacity="0.6"/>
+    <circle cx="78"  cy="195" r="1.5" opacity="0.5"/>
+    <circle cx="522" cy="165" r="2.5" opacity="0.6"/>
+    <circle cx="28"  cy="345" r="1.8" opacity="0.5"/>
+    <circle cx="572" cy="310" r="1.5" opacity="0.6"/>
+    <circle cx="95"  cy="475" r="1.5" opacity="0.4"/>
+    <circle cx="505" cy="495" r="2"   opacity="0.5"/>
+    <circle cx="55"  cy="615" r="2"   opacity="0.5"/>
+    <circle cx="540" cy="590" r="1.5" opacity="0.4"/>
+    <circle cx="145" cy="720" r="1.8" opacity="0.5"/>
+    <circle cx="455" cy="710" r="1.5" opacity="0.4"/>
+    <circle cx="195" cy="148" r="1.5" opacity="0.5"/>
+    <circle cx="405" cy="138" r="1.8" opacity="0.5"/>
+    <circle cx="88"  cy="400" r="1.2" opacity="0.4"/>
+    <circle cx="512" cy="425" r="1.2" opacity="0.4"/>
+    <circle cx="170" cy="558" r="1.5" opacity="0.4"/>
+    <circle cx="435" cy="548" r="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- 4-point sparkles -->
+  <g fill="#e8c4a0" opacity="0.55">
+    <path d="M68,148 L70,142 L72,148 L70,154Z M65,148 L70,146 L75,148 L70,150Z"/>
+    <path d="M532,118 L534,112 L536,118 L534,124Z M529,118 L534,116 L539,118 L534,120Z"/>
+    <path d="M558,275 L561,268 L564,275 L561,282Z M551,275 L561,272 L571,275 L561,278Z"/>
+    <path d="M42,265 L45,258 L48,265 L45,272Z M35,265 L45,262 L55,265 L45,268Z"/>
+  </g>
+
+  <!-- ── MOONS ── -->
+  <!-- Full moon ring above -->
+  <circle cx="300" cy="108" r="58"  fill="none" stroke="#c9956a" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="300" cy="108" r="52"  fill="none" stroke="#c9956a" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- Left crescent -->
+  <path d="M152,130 Q133,115 138,93 Q143,71 164,77 Q145,90 147,112Z"
+        fill="#c9956a" opacity="0.72"/>
+  <!-- Left hanging ornament -->
+  <line x1="155" y1="128" x2="148" y2="162" stroke="#c9956a" stroke-width="0.9" opacity="0.6"/>
+  <ellipse cx="148" cy="173" rx="5.5" ry="9" fill="none" stroke="#c9956a" stroke-width="0.9" opacity="0.6"/>
+  <line x1="148" y1="182" x2="148" y2="194" stroke="#c9956a" stroke-width="0.8" opacity="0.5"/>
+  <ellipse cx="148" cy="200" rx="3.5" ry="5.5" fill="none" stroke="#c9956a" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Right crescent -->
+  <path d="M448,130 Q467,115 462,93 Q457,71 436,77 Q455,90 453,112Z"
+        fill="#c9956a" opacity="0.72"/>
+  <!-- Right hanging ornament -->
+  <line x1="445" y1="128" x2="452" y2="162" stroke="#c9956a" stroke-width="0.9" opacity="0.6"/>
+  <ellipse cx="452" cy="173" rx="5.5" ry="9" fill="none" stroke="#c9956a" stroke-width="0.9" opacity="0.6"/>
+  <line x1="452" y1="182" x2="452" y2="194" stroke="#c9956a" stroke-width="0.8" opacity="0.5"/>
+  <ellipse cx="452" cy="200" rx="3.5" ry="5.5" fill="none" stroke="#c9956a" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- ── CROWN ENERGY ── -->
+  <line x1="300" y1="192" x2="300" y2="128" stroke="#c9956a" stroke-width="1.6" opacity="0.8"/>
+  <!-- Spiral at crown -->
+  <path d="M300,128 Q316,114 322,100 Q328,84 314,78 Q298,72 296,88 Q294,102 306,107"
+        stroke="#c9956a" stroke-width="1.3" fill="none" opacity="0.7"/>
+  <!-- Side rays -->
+  <path d="M294,198 Q272,182 255,172" stroke="#c9956a" stroke-width="1" fill="none" opacity="0.45"/>
+  <path d="M306,198 Q328,182 345,172" stroke="#c9956a" stroke-width="1" fill="none" opacity="0.45"/>
+  <!-- Third eye dot -->
+  <circle cx="300" cy="210" r="2.5" fill="#c9956a" opacity="0.85"/>
+
+  <!-- ── FIGURE ── -->
+
+  <!-- Head -->
+  <circle cx="300" cy="232" r="34" fill="none" stroke="#c9956a" stroke-width="1.8"/>
+
+  <!-- Eyes closed, serene -->
+  <path d="M285,229 Q291,224 297,229" stroke="#c9956a" stroke-width="1.3" fill="none"/>
+  <path d="M303,229 Q309,224 315,229" stroke="#c9956a" stroke-width="1.3" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M300,233 Q297,240 299,244 Q301,244 303,240" stroke="#c9956a" stroke-width="0.9" fill="none" opacity="0.6"/>
+
+  <!-- Hair flowing left -->
+  <path d="M272,222 Q248,255 242,295 Q237,338 248,375"
+        stroke="#c9956a" stroke-width="1.4" fill="none" opacity="0.65"/>
+  <path d="M268,228 Q242,265 234,308 Q228,350 236,388"
+        stroke="#c9956a" stroke-width="0.9" fill="none" opacity="0.4"/>
+
+  <!-- Hair flowing right -->
+  <path d="M328,222 Q352,255 358,295 Q363,338 352,375"
+        stroke="#c9956a" stroke-width="1.4" fill="none" opacity="0.65"/>
+
+  <!-- Neck -->
+  <path d="M291,266 L294,282" stroke="#c9956a" stroke-width="1.6" fill="none"/>
+  <path d="M309,266 L306,282" stroke="#c9956a" stroke-width="1.6" fill="none"/>
+
+  <!-- Shoulders -->
+  <path d="M294,282 Q265,286 242,298 Q225,312 220,332"
+        stroke="#c9956a" stroke-width="1.6" fill="none"/>
+  <path d="M306,282 Q335,286 358,298 Q375,312 380,332"
+        stroke="#c9956a" stroke-width="1.6" fill="none"/>
+
+  <!-- Left arm resting along side/belly -->
+  <path d="M220,332 Q212,365 215,400 Q218,430 238,452 Q258,468 280,474"
+        stroke="#c9956a" stroke-width="1.6" fill="none"/>
+
+  <!-- Right arm resting along side/belly -->
+  <path d="M380,332 Q388,365 385,400 Q382,430 362,452 Q342,468 320,474"
+        stroke="#c9956a" stroke-width="1.6" fill="none"/>
+
+  <!-- ── PREGNANT BELLY ── the defining feature -->
+  <path d="M242,298 Q228,345 230,395 Q233,438 255,468 Q275,490 300,494 Q325,490 345,468 Q367,438 370,395 Q372,345 358,298"
+        stroke="#c9956a" stroke-width="2" fill="none"/>
+
+  <!-- Belly glow — sacred womb -->
+  <ellipse cx="300" cy="408" rx="52" ry="50" fill="url(#bellyGlow)"/>
+
+  <!-- Baby curl inside (subtle) -->
+  <circle cx="300" cy="408" r="16" fill="none" stroke="#c9956a" stroke-width="0.8" opacity="0.35"/>
+  <path d="M292,402 Q298,395 306,398 Q312,404 308,412 Q303,418 296,415 Q290,410 292,402"
+        stroke="#c9956a" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+  <!-- Small star / spark in belly -->
+  <path d="M300,406 L301.5,410 L306,410 L302.5,412.8 L304,417 L300,414.2 L296,417 L297.5,412.8 L294,410 L298.5,410Z"
+        fill="#c9956a" opacity="0.45"/>
+
+  <!-- Hands meeting below belly in prayer/mudra -->
+  <path d="M280,474 Q290,484 300,487 Q310,484 320,474"
+        stroke="#c9956a" stroke-width="1.3" fill="none"/>
+  <!-- Fingers left -->
+  <path d="M280,474 Q277,464 279,458" stroke="#c9956a" stroke-width="0.9" fill="none"/>
+  <path d="M285,477 Q282,466 283,460" stroke="#c9956a" stroke-width="0.9" fill="none"/>
+  <!-- Fingers right -->
+  <path d="M320,474 Q323,464 321,458" stroke="#c9956a" stroke-width="0.9" fill="none"/>
+  <path d="M315,477 Q318,466 317,460" stroke="#c9956a" stroke-width="0.9" fill="none"/>
+
+  <!-- ── LOTUS LEGS / SEATED BASE ── -->
+  <!-- Left leg in lotus -->
+  <path d="M248,468 Q225,478 205,496 Q188,514 186,535 Q185,552 200,560 Q222,568 246,560"
+        stroke="#c9956a" stroke-width="1.6" fill="none"/>
+  <path d="M246,560 Q270,566 295,562" stroke="#c9956a" stroke-width="1.3" fill="none"/>
+
+  <!-- Right leg in lotus -->
+  <path d="M352,468 Q375,478 395,496 Q412,514 414,535 Q415,552 400,560 Q378,568 354,560"
+        stroke="#c9956a" stroke-width="1.6" fill="none"/>
+  <path d="M354,560 Q330,566 305,562" stroke="#c9956a" stroke-width="1.3" fill="none"/>
+
+  <!-- ── LOTUS FLOWER BASE ── -->
+  <!-- Petals layer 1 (inner) -->
+  <path d="M300,578 Q286,560 272,558 Q262,562 263,574 Q265,587 280,590 Q293,591 300,578"
+        stroke="#c9956a" stroke-width="1.3" fill="none"/>
+  <path d="M300,578 Q314,560 328,558 Q338,562 337,574 Q335,587 320,590 Q307,591 300,578"
+        stroke="#c9956a" stroke-width="1.3" fill="none"/>
+
+  <!-- Petals layer 2 -->
+  <path d="M300,576 Q283,552 264,552 Q250,558 251,573 Q253,587 270,589"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M300,576 Q317,552 336,552 Q350,558 349,573 Q347,587 330,589"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.7"/>
+
+  <!-- Petals layer 3 (outer) -->
+  <path d="M300,574 Q278,546 255,548 Q239,556 241,574 Q244,590 264,592"
+        stroke="#c9956a" stroke-width="0.8" fill="none" opacity="0.45"/>
+  <path d="M300,574 Q322,546 345,548 Q361,556 359,574 Q356,590 336,592"
+        stroke="#c9956a" stroke-width="0.8" fill="none" opacity="0.45"/>
+
+  <!-- Bottom lotus petal -->
+  <path d="M300,586 Q296,604 292,622 Q298,630 300,628 Q302,630 308,622 Q304,604 300,586"
+        stroke="#c9956a" stroke-width="0.9" fill="none" opacity="0.55"/>
+
+  <!-- Lotus stem with leaf -->
+  <path d="M300,630 Q300,655 300,672" stroke="#c9956a" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M300,648 Q285,638 275,628 Q270,618 278,612 Q290,608 300,622"
+        stroke="#c9956a" stroke-width="0.8" fill="none" opacity="0.4"/>
+  <path d="M300,648 Q315,638 325,628 Q330,618 322,612 Q310,608 300,622"
+        stroke="#c9956a" stroke-width="0.8" fill="none" opacity="0.4"/>
+
+  <!-- ── BOTTOM DECORATIVE SWIRLS ── -->
+  <path d="M300,672 Q292,688 288,705 Q286,718 294,726 Q300,730 306,726 Q314,718 312,705 Q308,688 300,672"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.5"/>
+
+  <!-- Infinity teardrop at base -->
+  <path d="M300,748 Q288,738 284,748 Q280,760 292,768 Q300,772 308,768 Q320,760 316,748 Q312,738 300,748"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.5"/>
+
+  <!-- ── SIDE BOTANICALS ── -->
+  <!-- Left botanical swirl -->
+  <path d="M158,390 Q138,368 128,345 Q122,322 134,308 Q150,297 166,310"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M166,310 Q178,300 188,308 Q194,320 182,332 Q168,338 158,326 Q152,312 158,298"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Left leaf -->
+  <path d="M138,368 Q118,362 108,348 Q102,332 114,320 Q128,312 142,325 Q148,342 138,368"
+        stroke="#c9956a" stroke-width="0.9" fill="none" opacity="0.4"/>
+  <!-- Left leaf vein -->
+  <path d="M115,334 Q128,342 138,368" stroke="#c9956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+
+  <!-- Right botanical swirl -->
+  <path d="M442,390 Q462,368 472,345 Q478,322 466,308 Q450,297 434,310"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M434,310 Q422,300 412,308 Q406,320 418,332 Q432,338 442,326 Q448,312 442,298"
+        stroke="#c9956a" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Right leaf -->
+  <path d="M462,368 Q482,362 492,348 Q498,332 486,320 Q472,312 458,325 Q452,342 462,368"
+        stroke="#c9956a" stroke-width="0.9" fill="none" opacity="0.4"/>
+  <!-- Right leaf vein -->
+  <path d="M485,334 Q472,342 462,368" stroke="#c9956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+
+  <!-- ── SCATTERED LARGER DOTS (like the reference) ── -->
+  <g fill="#c9956a" opacity="0.25">
+    <circle cx="118" cy="595" r="4.5"/>
+    <circle cx="482" cy="575" r="3.5"/>
+    <circle cx="88"  cy="712" r="5.5"/>
+    <circle cx="512" cy="695" r="4"/>
+    <circle cx="165" cy="678" r="3.5"/>
+    <circle cx="438" cy="658" r="4.5"/>
+    <circle cx="205" cy="755" r="3.5"/>
+    <circle cx="398" cy="745" r="4"/>
+    <circle cx="48"  cy="498" r="3.5"/>
+    <circle cx="552" cy="475" r="4"/>
+    <circle cx="72"  cy="278" r="5"/>
+    <circle cx="528" cy="255" r="3.5"/>
+    <circle cx="30"  cy="160" r="4.5"/>
+    <circle cx="570" cy="185" r="3.5"/>
+  </g>
+
+</svg>
