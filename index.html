@@ -140,7 +140,11 @@
       <p style="margin-top:24px">Tell me a little about where you are and what you're looking for. I read every message myself.</p>
       <p>Prefer to book straight away? Choose a class time in my <a href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank" rel="noopener">calendar</a>.</p>
     </div>
-    <form id="contact-form" novalidate>
+    <form id="contact-form" action="https://formsubmit.co/cassieousta3@gmail.com" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New message from your website" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://cassiekalyani.com/index.html?sent=1" />
+      <input type="hidden" name="_template" value="table" />
       <label>Your name<input name="name" required autocomplete="name" /></label>
       <label>Your email<input name="email" type="email" required autocomplete="email" /></label>
       <label>I'm interested in
@@ -176,9 +180,6 @@
 </footer>
 
 <script>
-  // Set the address messages should go to.
-  const CONTACT_EMAIL = "cassieousta3@gmail.com";
-
   // Buttons that point to the form preselect what the visitor is interested in.
   document.querySelectorAll('[data-interest]').forEach(a => {
     a.addEventListener('click', () => {
@@ -187,22 +188,12 @@
     });
   });
 
-  document.getElementById('contact-form').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = e.target, note = document.getElementById('form-note');
-    if (!f.name.value.trim() || !f.email.checkValidity() || !f.email.value) {
-      note.textContent = 'Add your name and a valid email so I can reply.';
-      return;
-    }
-    if (!CONTACT_EMAIL) {
-      note.innerHTML = 'Messages are opening soon. For now, write to me on <a href="https://www.instagram.com/cassieousta.kalyani/" target="_blank" rel="noopener">Instagram</a>.';
-      return;
-    }
-    const subject = encodeURIComponent(f.interest.value + ' – ' + f.name.value);
-    const body = encodeURIComponent(f.message.value + '\n\n' + f.name.value + '\n' + f.email.value);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    note.textContent = 'Your email app is opening with your message ready to send.';
-  });
+  // Show a thank-you note when redirected back after submission.
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    const note = document.getElementById('form-note');
+    if (note) note.textContent = 'Message sent — I\'ll be in touch soon.';
+    document.getElementById('contact-form').style.display = 'none';
+  }
 </script>
 </body>
 </html>
