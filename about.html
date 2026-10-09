@@ -2,400 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About · Cassie · Kalyani</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream: #f9f6f1;
-      --dark: #1a1a18;
-      --muted: #7a7872;
-      --accent: #b5a898;
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Montserrat', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--dark);
-      font-family: var(--font-sans);
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.4rem 3rem;
-      background: rgba(249, 246, 241, 0.85);
-      backdrop-filter: blur(8px);
-    }
-
-    .nav-logo {
-      font-family: var(--font-serif);
-      font-weight: 300;
-      font-size: 1.15rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--dark);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.4em;
-    }
-
-    .nav-logo .star { font-size: 0.7rem; color: var(--muted); transform: translateY(-1px); }
-
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-
-    .nav-links a {
-      font-size: 0.6rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--dark); }
-    .nav-links a.active { color: var(--dark); }
-
-    /* ── ABOUT HERO ── */
-    .about-hero {
-      padding: 12rem 3rem 5rem;
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    .about-photo {
-      aspect-ratio: 3/4;
-      overflow: hidden;
-      background: #e8e2da;
-      position: sticky;
-      top: 8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-
-    .about-photo span {
-      font-size: 0.55rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .about-label {
-      font-size: 0.55rem;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .about-name {
-      font-family: var(--font-serif);
-      font-weight: 300;
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--dark);
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .about-name-italic {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-weight: 300;
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
-      display: block;
-      line-height: 1.6;
-    }
-
-    .about-divider {
-      width: 32px;
-      height: 0.5px;
-      background: var(--accent);
-      margin-bottom: 2rem;
-    }
-
-    .about-body {
-      font-size: 0.85rem;
-      line-height: 1.9;
-      color: var(--muted);
-      margin-bottom: 1.4rem;
-    }
-
-    /* ── CREDENTIALS ── */
-    .credentials {
-      padding: 6rem 3rem;
-      max-width: 900px;
-      margin: 0 auto;
-      border-top: 0.5px solid #e8e2da;
-    }
-
-    .credentials-label {
-      font-size: 0.55rem;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    .credentials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-
-    .credential-item {
-      padding: 1.5rem 0;
-      border-top: 0.5px solid #e8e2da;
-      padding-right: 2rem;
-    }
-
-    .credential-title {
-      font-family: var(--font-serif);
-      font-weight: 300;
-      font-size: 1.2rem;
-      color: var(--dark);
-      margin-bottom: 0.3rem;
-    }
-
-    .credential-sub {
-      font-size: 0.55rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ── CTA ── */
-    .about-cta {
-      padding: 6rem 3rem;
-      text-align: center;
-      border-top: 0.5px solid #e8e2da;
-    }
-
-    .about-cta-heading {
-      font-family: var(--font-serif);
-      font-weight: 300;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      color: var(--dark);
-      margin-bottom: 2.5rem;
-    }
-
-    .about-cta-links { display: flex; justify-content: center; gap: 3rem; }
-
-    .about-cta-btn {
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--dark);
-      text-decoration: none;
-      border-bottom: 0.5px solid var(--dark);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .about-cta-btn:hover { color: var(--muted); border-color: var(--muted); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 0.5px solid var(--accent);
-      padding: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .footer-logo {
-      font-family: var(--font-serif);
-      font-weight: 300;
-      font-size: 1rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      gap: 0.4em;
-    }
-
-    .footer-logo .star { font-size: 0.65rem; color: var(--muted); }
-
-    .footer-location {
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-top: 0.4rem;
-    }
-
-    .footer-socials { display: flex; gap: 1.2rem; margin-top: 1.2rem; }
-
-    .footer-socials a {
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-socials a:hover { color: var(--dark); }
-
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-
-    .footer-links a {
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--dark); }
-
-    /* ── TABLET (≤900px) ── */
-    @media (max-width: 900px) {
-      nav { padding: 1.2rem 2rem; }
-      .about-hero { grid-template-columns: 1fr; gap: 3rem; padding: 8rem 2rem 4rem; }
-      .about-photo { position: static; min-height: 380px; }
-      .credentials { padding: 4rem 2rem; }
-      .credentials-grid { grid-template-columns: 1fr; }
-      .about-cta { padding: 4rem 2rem; }
-      .about-cta-links { flex-direction: column; gap: 1.5rem; align-items: center; }
-      footer { flex-direction: column; align-items: flex-start; padding: 2rem; }
-    }
-
-    /* ── PHONE (≤480px) ── */
-    @media (max-width: 480px) {
-      nav { padding: 1rem 1.2rem; }
-      .nav-logo { font-size: 0.9rem; letter-spacing: 0.2em; }
-      .nav-links { gap: 1.2rem; }
-      .nav-links a { font-size: 0.5rem; }
-      .about-hero { padding: 7rem 1.2rem 3rem; gap: 2rem; }
-      .about-photo { min-height: 300px; }
-      .about-name { font-size: 1.8rem; }
-      .about-name-italic { font-size: 0.95rem; }
-      .credentials { padding: 3rem 1.2rem; }
-      .credentials-grid { grid-template-columns: 1fr; }
-      .about-cta { padding: 3rem 1.2rem; }
-      .about-cta-heading { font-size: 1.6rem; }
-      footer { padding: 2rem 1.2rem; gap: 1.5rem; }
-      .footer-links { flex-wrap: wrap; gap: 1rem; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Cassie ☽ Kalyāṇī</title>
+  <meta name="description" content="Cassie Kalyāṇī is a Hatha Yoga teacher trained in the Integral Yoga lineage, with additional training in breathwork, pranayama and yoga for fertility." />
+  <meta name="theme-color" content="#27212b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-logo">
-      Cassie <span class="star">✦</span> Kalyani
-    </a>
-    <ul class="nav-links">
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="index.html#subscribe">Subscribe</a></li>
+<nav class="night">
+  <div class="wrap">
+    <a class="logo" href="index.html">Cassie<span>☽</span>Kalyāṇī</a>
+    <ul>
+      <li class="hide-sm"><a href="index.html#practice">Practice</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li class="hide-sm"><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-book" href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank" rel="noopener">Book</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
-  <!-- ABOUT HERO -->
-  <div class="about-hero">
-    <div class="about-photo">
-      <img src="images/cassie-about.jpg" alt="Cassie Kalyani" />
+<section>
+  <div class="wrap story">
+    <div class="photo">
+      <img src="images/cassie-about.jpg" alt="Portrait of Cassie Kalyāṇī" onerror="this.remove()" />
     </div>
-
-    <div class="about-content">
-      <p class="about-label">About</p>
-      <h1 class="about-name">Cassie · Kalyāṇī</h1>
-      <span class="about-name-italic">Kalyāṇī is the Sanskrit spiritual name given to Cassie by her teachers — meaning auspicious, beautiful, and blessed.</span>
-      <div class="about-divider"></div>
-      <p class="about-body">Kalyāṇī is a 200-hour Hatha Yoga teacher trained at the Integral Yoga Institute, part of one of the oldest authentic yoga lineages in the West, rooted in the teachings of Swami Satchidananda. She is also trained in Prenatal and Fertility Yoga, and teaches pranayama and meditation.</p>
-      <p class="about-body">Her classes combine traditional Hatha Yoga with breathwork, relaxation, and meditation — reflecting the classical understanding that the physical practice prepares the body and mind for deeper states of awareness. She emphasizes alignment, nervous system balance, and the inner experience behind the poses.</p>
-      <p class="about-body">Her teaching bridges strength and subtlety, guiding students from mindful movement into stillness. Trauma-informed and always adaptable, her classes will gently challenge you — while offering variations every step of the way, so the practice meets you exactly where you are.</p>
+    <div class="prose">
+      <h1 style="font-size:clamp(2.6rem,7vw,4.4rem)">Cassie Kalyāṇī</h1>
+      <p class="lede" style="margin:18px 0 28px">Hatha Yoga teacher, RYT-200. New York and online.</p>
+      <p>I teach classical Hatha Yoga as it was meant to be practiced: postures, breath, deep rest and meditation working together, so the body becomes steady and the mind grows quiet.</p>
+      <p>My training comes from the Integral Yoga Institute, one of the oldest yoga lineages in the West, rooted in the teachings of Swami Satchidananda. I have never stopped studying, and everything I learn finds its way into one practice.</p>
+      <p>My classes are trauma-informed and always adaptable. They will gently challenge you while offering a variation at every step, so the practice meets you where you are.</p>
     </div>
   </div>
+</section>
 
-  <!-- CREDENTIALS -->
-  <div class="credentials">
-    <p class="credentials-label">Training & Certifications</p>
-    <div class="credentials-grid">
-      <div class="credential-item">
-        <p class="credential-title">200-Hour Hatha Yoga</p>
-        <p class="credential-sub">Integral Yoga Institute · New York</p>
-      </div>
-      <div class="credential-item">
-        <p class="credential-title">RYT-200 · Yoga Alliance</p>
-        <p class="credential-sub"><a href="https://yogaalliance.org/search-results/?q=kassiani%20ousta" target="_blank" style="color:var(--muted);text-decoration:underline;">Registered Yoga Teacher</a></p>
-      </div>
-      <div class="credential-item">
-        <p class="credential-title">Prenatal Yoga</p>
-        <p class="credential-sub">Certified · In training</p>
-      </div>
-      <div class="credential-item">
-        <p class="credential-title">Yoga for Fertility</p>
-        <p class="credential-sub">Specialized training · In development</p>
-      </div>
-      <div class="credential-item">
-        <p class="credential-title">Asana & Pranayama</p>
-        <p class="credential-sub">Integral Yoga Institute lineage</p>
-      </div>
-      <div class="credential-item">
-        <p class="credential-title">Trauma-Informed Teaching</p>
-        <p class="credential-sub">Applied across all classes & formats</p>
-      </div>
+<div class="name-meaning night">
+  <div class="wrap">
+    <h2>Why Kalyāṇī</h2>
+    <p class="serif-quote">Kalyāṇī is the Sanskrit spiritual name my teachers gave me. It means auspicious, beautiful and blessed.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap" style="max-width:720px">
+    <div class="section-head">
+      <h2>My path of study</h2>
+      <p class="lede">Completed training first, then what I'm studying now.</p>
+    </div>
+    <ol class="path">
+      <li>
+        <h3>200-hour Hatha Yoga</h3>
+        <p>Integral Yoga Institute, New York. Asana and pranayama in the Integral Yoga lineage.</p>
+        <span class="status">Completed, registered with Yoga Alliance as RYT-200</span>
+      </li>
+      <li>
+        <h3>Breathwork &amp; Pranayama</h3>
+        <p>50 additional hours in breath practice and its effect on the nervous system.</p>
+        <span class="status">Completed</span>
+      </li>
+      <li>
+        <h3>Yoga for Fertility</h3>
+        <p>25 additional hours in supporting women on the fertility journey.</p>
+        <span class="status">Completed</span>
+      </li>
+      <li>
+        <h3>Trauma-informed teaching</h3>
+        <p>Applied across every class and format.</p>
+        <span class="status">Practiced in all classes</span>
+      </li>
+      <li class="ongoing">
+        <h3>Prenatal Yoga</h3>
+        <p>Training to guide women safely through pregnancy and after birth.</p>
+        <span class="status">In training</span>
+      </li>
+      <li class="ongoing">
+        <h3>Mudras &amp; Mindfulness</h3>
+        <p>The language of the hands and how it directs attention and energy.</p>
+        <span class="status">In progress</span>
+      </li>
+      <li class="ongoing">
+        <h3>Chakras &amp; Asana</h3>
+        <p>How the subtle body and the physical practice inform each other.</p>
+        <span class="status">In progress</span>
+      </li>
+    </ol>
+    <p style="margin-top:8px"><a href="https://yogaalliance.org/search-results/?q=kassiani%20ousta" target="_blank" rel="noopener" style="color:var(--moon)">Verify my registration on Yoga Alliance</a></p>
+  </div>
+</section>
+
+<section style="text-align:center;padding-top:24px">
+  <div class="wrap">
+    <h2>Ready to begin?</h2>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-moon" href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank" rel="noopener">Book a class</a>
+      <a class="btn btn-ghost" href="index.html#contact">Write to me</a>
     </div>
   </div>
+</section>
 
-  <!-- CTA -->
-  <div class="about-cta">
-    <h2 class="about-cta-heading">Ready to begin your practice?</h2>
-    <div class="about-cta-links">
-      <a href="https://calendar.app.google/XcqBuoKoVigdQqvf9" target="_blank" class="about-cta-btn">Book a Class</a>
-      <a href="index.html#contact" class="about-cta-btn">Get in Touch</a>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
+<footer class="night">
+  <div class="wrap">
     <div>
-      <div class="footer-logo">Cassie <span class="star">✦</span> Kalyani</div>
-      <p class="footer-location">Based in New York</p>
-      <div class="footer-socials">
-        <a href="https://www.tiktok.com/@cassieousta" target="_blank">TikTok</a>
-        <a href="https://www.instagram.com/cassieousta.kalyani/" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@CassieOusta" target="_blank">YouTube</a>
-      </div>
-      <a href="https://yogaalliance.org/search-results/?q=kassiani%20ousta" target="_blank" style="display:inline-block;margin-top:1rem;font-size:0.5rem;letter-spacing:0.35em;text-transform:uppercase;color:#b5a898;text-decoration:none;border-bottom:0.5px solid #b5a898;padding-bottom:1px;">RYT-200 · Yoga Alliance</a>
+      <a class="logo" href="index.html">Cassie<span>☽</span>Kalyāṇī</a>
+      RYT-200, Yoga Alliance. New York and online.
     </div>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="index.html#subscribe">Subscribe</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+    <ul>
+      <li><a href="https://www.tiktok.com/@cassieousta" target="_blank" rel="noopener">TikTok</a></li>
+      <li><a href="https://www.instagram.com/cassieousta.kalyani/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@CassieOusta" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
-  </footer>
-
+  </div>
+</footer>
 </body>
 </html>
