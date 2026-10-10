@@ -113,12 +113,14 @@ h3 { font-size: 1.65rem; }
   letter-spacing: 0.03em;
   padding: 6px 24px;
 }
-.benefits-list li + li {
-  border-left: 1px solid var(--veil);
+.benefits-list li.sep {
+  color: var(--seaglass);
+  font-size: 0.6rem;
+  padding: 6px 8px;
 }
 @media (max-width: 640px) {
-  .benefits-list { gap: 8px; }
-  .benefits-list li + li { border-left: 0; }
+  .benefits-list li.sep { display: none; }
+  .benefits-list { gap: 10px 20px; }
 }
 
 section { padding: 112px 0; }
