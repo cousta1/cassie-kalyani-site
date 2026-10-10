@@ -204,7 +204,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--m
 
 /* ── footer ── */
 footer { border-top: 1px solid var(--veil); padding: 40px 0 56px; color: var(--mist); font-size: 0.95rem; }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
 footer .logo { color: var(--pearl); display: block; margin-bottom: 6px; }
 footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 18px; }
 footer a { text-decoration: none; }
