@@ -94,6 +94,33 @@ h3 { font-size: 1.65rem; }
 .btn-ghost:hover { background: var(--dusk); }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
+/* ── benefits strip ── */
+.benefits {
+  border-top: 1px solid var(--veil);
+  border-bottom: 1px solid var(--veil);
+  padding: 20px 0;
+}
+.benefits-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+}
+.benefits-list li {
+  color: var(--mist);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  padding: 6px 24px;
+}
+.benefits-list li + li {
+  border-left: 1px solid var(--veil);
+}
+@media (max-width: 640px) {
+  .benefits-list { gap: 8px; }
+  .benefits-list li + li { border-left: 0; }
+}
+
 section { padding: 112px 0; }
 @media (max-width: 640px) { section { padding: 64px 0; } }
 .section-head { margin-bottom: 48px; }
