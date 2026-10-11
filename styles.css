@@ -1,29 +1,29 @@
-/* Cassie ☽ Kalyāṇī — mauve stone by day, evening plum by night */
+/* Cassie ☽ Kalyāṇī — mauve stone by day, deep plum by night */
 :root {
-  --tide: #ede8e8;        /* mauve-tinted stone page */
-  --dusk: #e3dadc;        /* raised surfaces, photo frames */
-  --veil: #d4c8cc;        /* hairlines */
-  --mist: #6d6066;        /* secondary text */
-  --pearl: #2e2429;       /* primary text */
-  --seaglass: #8b5f74;    /* small labels, dusty mauve */
-  --moon: #27212b;        /* primary buttons, deep plum (matches footer) */
+  --tide: #f0ebee;        /* soft mauve page */
+  --dusk: #e6dfe3;        /* raised surfaces, photo frames */
+  --veil: #d1c4ca;        /* hairlines */
+  --mist: #7a6570;        /* secondary text */
+  --pearl: #2e1f2a;       /* primary text */
+  --seaglass: #9c7080;    /* small labels, dusty rose */
+  --moon: #4a2040;        /* primary buttons, deep plum */
   --on-moon: #ffffff;
-  --ghost-line: #c7b6bd;
+  --ghost-line: #d1c4ca;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Jost', system-ui, sans-serif;
 }
 
-/* evening plum bands */
+/* deep plum bands */
 .night {
-  --tide: #27212b;
-  --dusk: #332b37;
-  --veil: #453b4a;
-  --mist: #b9adbb;
+  --tide: #27182a;
+  --dusk: #341f38;
+  --veil: #4a3050;
+  --mist: #c0a8b8;
   --pearl: #f2ecef;
-  --seaglass: #d4b3c5;
-  --moon: #e6d4de;
-  --on-moon: #27212b;
-  --ghost-line: #5c4f60;
+  --seaglass: #d4b0c4;
+  --moon: #e8d0de;
+  --on-moon: #27182a;
+  --ghost-line: #5c3f60;
   background: var(--tide);
   color: var(--pearl);
 }
