@@ -203,7 +203,7 @@ section { padding: 112px 0; }
 @media (max-width: 520px) { .layers { grid-template-columns: 1fr; } }
 
 /* ── waitlists ── */
-.soon { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.soon { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
 .soon article { padding-top: 28px; border-top: 1px solid var(--veil); }
 .soon .tag { color: var(--seaglass); font-size: 0.95rem; }
 .soon h3 { margin: 6px 0 10px; }
