@@ -231,7 +231,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--m
 .faq dd { color: var(--mist); max-width: 56em; margin: 0; }
 
 /* ── social strip ── */
-.social-strip { padding: 28px 0; border-top: 1px solid var(--veil); border-bottom: 1px solid var(--veil); }
+.social-strip { padding: 14px 0; border-top: 1px solid var(--veil); border-bottom: 1px solid var(--veil); }
 .social-strip .wrap { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
 .social-strip p { color: var(--mist); font-size: 0.95rem; }
 .social-strip ul { list-style: none; display: flex; gap: 20px; }
