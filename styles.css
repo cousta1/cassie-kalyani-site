@@ -222,6 +222,22 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--m
 .form-note { font-size: 0.9rem; color: var(--mist); min-height: 1.4em; }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
 
+/* ── faq ── */
+.faq-section { padding-top: 0; }
+.faq { display: flex; flex-direction: column; gap: 0; }
+.faq-item { padding: 24px 0; border-bottom: 1px solid var(--veil); }
+.faq-item:first-child { border-top: 1px solid var(--veil); }
+.faq dt { font-family: var(--serif); font-size: 1.25rem; color: var(--pearl); margin-bottom: 8px; }
+.faq dd { color: var(--mist); max-width: 56em; margin: 0; }
+
+/* ── social strip ── */
+.social-strip { padding: 28px 0; border-top: 1px solid var(--veil); border-bottom: 1px solid var(--veil); }
+.social-strip .wrap { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.social-strip p { color: var(--mist); font-size: 0.95rem; }
+.social-strip ul { list-style: none; display: flex; gap: 20px; }
+.social-strip ul a { text-decoration: none; color: var(--pearl); font-size: 0.95rem; }
+.social-strip ul a:hover { color: var(--moon); }
+
 /* ── footer ── */
 footer { border-top: 1px solid var(--veil); padding: 40px 0 56px; color: var(--mist); font-size: 0.95rem; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
