@@ -155,13 +155,13 @@ section { padding: 112px 0; }
 }
 
 /* ── doors (three ways in) ── */
-.doors { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--veil); }
-.door { padding: 36px 32px 8px 0; display: flex; flex-direction: column; }
+.doors { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto 1fr auto; border-top: 1px solid var(--veil); }
+.door { padding: 36px 32px 8px 0; display: grid; grid-template-rows: subgrid; grid-row: span 4; }
+.door-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .door + .door { padding-left: 32px; border-left: 1px solid var(--veil); }
 .door .where { color: var(--seaglass); font-size: 0.95rem; margin-bottom: 10px; }
 .door h3 { margin-bottom: 12px; }
 .door p { color: var(--mist); }
-.door-top { flex-grow: 1; }
 .door-feel { font-size: 0.9rem; font-style: italic; margin: 10px 0 14px; }
 .price { font-family: var(--serif); font-size: 2.2rem; color: var(--pearl); margin: 22px 0 2px; }
 .price small { font-family: var(--sans); font-size: 0.95rem; color: var(--mist); }
@@ -170,7 +170,8 @@ section { padding: 112px 0; }
 .door ul li { padding: 4px 0; }
 .door .btn { align-self: flex-start; }
 @media (max-width: 860px) {
-  .doors { grid-template-columns: 1fr; }
+  .doors { grid-template-columns: 1fr; grid-template-rows: none; }
+  .door { display: flex; flex-direction: column; grid-row: auto; }
   .door, .door + .door { padding: 32px 0; border-left: 0; border-bottom: 1px solid var(--veil); }
 }
 .karma {
