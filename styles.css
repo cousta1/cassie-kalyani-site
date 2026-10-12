@@ -161,7 +161,7 @@ section { padding: 112px 0; }
 .door .where { color: var(--seaglass); font-size: 0.95rem; margin-bottom: 10px; }
 .door h3 { margin-bottom: 12px; }
 .door p { color: var(--mist); }
-.door-desc { flex-grow: 1; }
+.door-top { flex-grow: 1; }
 .door-feel { font-size: 0.9rem; font-style: italic; margin: 10px 0 14px; }
 .price { font-family: var(--serif); font-size: 2.2rem; color: var(--pearl); margin: 22px 0 2px; }
 .price small { font-family: var(--sans); font-size: 0.95rem; color: var(--mist); }
