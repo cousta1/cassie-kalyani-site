@@ -51,4 +51,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://cassie-kalyani-site.vercel.app/sitemap.xml
+Sitemap: https://cassiekalyani.com/sitemap.xml
