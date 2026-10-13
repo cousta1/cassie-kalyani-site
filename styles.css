@@ -195,7 +195,8 @@ section { padding: 112px 0; }
 @media (max-width: 860px) { .story { grid-template-columns: 1fr; gap: 40px; } .photo { max-width: 380px; } }
 
 .first-class { padding: 0 0 96px; text-align: center; }
-.first-class-card { max-width: 980px; margin: 0 auto; padding: 48px 40px 52px; border: 1px solid var(--veil); border-radius: 20px; }
+section:has(+ .first-class) { padding-bottom: 48px; }
+.first-class-card { padding: 48px 40px 52px; border: 1px solid var(--veil); border-radius: 20px; }
 .first-class h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); }
 .first-class-lede { color: var(--mist); font-style: italic; margin-top: 8px; }
 @media (max-width: 640px) { .first-class-card { padding: 36px 22px 40px; } }
