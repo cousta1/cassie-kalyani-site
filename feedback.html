@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How was your practice? · Cassie Kalyāṇī</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#27212b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    .fb { max-width: 560px; margin: 0 auto; text-align: center; }
+    .fb form { text-align: left; margin-top: 40px; }
+    .stars { display: flex; flex-direction: row-reverse; justify-content: center; gap: 6px; border: 0; margin: 8px 0 4px; }
+    .stars input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .stars label { font-size: 2.6rem; line-height: 1; color: var(--veil); cursor: pointer; padding: 4px; transition: color .15s; }
+    .stars input:checked ~ label, .stars label:hover, .stars label:hover ~ label { color: var(--moon); }
+    .stars input:focus-visible + label { outline: 2px solid var(--moon); outline-offset: 2px; border-radius: 4px; }
+    .stars-hint { text-align: center; color: var(--mist); font-size: 0.9rem; min-height: 1.4em; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; }
+    .consent input { margin-top: 5px; padding: 0; width: auto; accent-color: var(--moon); }
+    .stars { padding: 0; }
+    .fb-error { color: #9c3a4a; font-size: 0.9rem; text-align: center; min-height: 1.4em; }
+  </style>
+</head>
+<body>
+
+<nav class="night">
+  <div class="wrap">
+    <a class="logo" href="/">Cassie<span>☽</span>Kalyāṇī</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a class="nav-book" href="https://app.acuityscheduling.com/schedule.php?owner=40610450" target="_blank" rel="noopener">Book</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section>
+  <div class="wrap fb">
+    <div id="fb-form-wrap">
+      <h1 style="font-size:clamp(2.2rem,6vw,3.4rem)">How was your practice?</h1>
+      <p class="lede" style="margin:16px auto 0">Thank you for practicing with me. One tap is enough. Words are welcome if you'd like to share them.</p>
+
+      <form id="fb-form" action="https://formsubmit.co/cassieousta3@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New class feedback" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://cassie-kalyani-site.vercel.app/feedback.html?sent=1" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="class" id="fb-class" value="" />
+
+        <fieldset class="stars" aria-label="Your rating">
+          <input type="radio" id="s5" name="rating" value="5 stars" /><label for="s5" title="5 stars" aria-label="5 stars">★</label>
+          <input type="radio" id="s4" name="rating" value="4 stars" /><label for="s4" title="4 stars" aria-label="4 stars">★</label>
+          <input type="radio" id="s3" name="rating" value="3 stars" /><label for="s3" title="3 stars" aria-label="3 stars">★</label>
+          <input type="radio" id="s2" name="rating" value="2 stars" /><label for="s2" title="2 stars" aria-label="2 stars">★</label>
+          <input type="radio" id="s1" name="rating" value="1 star" /><label for="s1" title="1 star" aria-label="1 star">★</label>
+        </fieldset>
+        <p class="stars-hint" id="stars-hint">Tap a star</p>
+
+        <div style="display:grid;gap:16px;margin-top:20px">
+          <label>Anything you'd like to share? (optional)
+            <textarea name="message" placeholder="How did you feel before class, and after?"></textarea>
+          </label>
+          <label>Your first name (optional)
+            <input name="name" autocomplete="given-name" />
+          </label>
+          <label class="consent">
+            <input type="checkbox" name="may_share" value="Yes, may share with first name" />
+            <span>You may share my words on your website, with my first name only.</span>
+          </label>
+          <p class="fb-error" id="fb-error" role="alert"></p>
+          <button class="btn btn-moon" type="submit" style="justify-self:center">Send</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="fb-thanks" hidden>
+      <h1 style="font-size:clamp(2.2rem,6vw,3.4rem)">Thank you</h1>
+      <p class="lede" style="margin:16px auto 0">Your words mean a lot to me. I read every one myself.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-moon" href="https://app.acuityscheduling.com/schedule.php?owner=40610450" target="_blank" rel="noopener">Book your next class</a>
+        <a class="btn btn-ghost" href="/">Back to the site</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="night">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="/">Cassie<span>☽</span>Kalyāṇī</a>
+      Hatha Yoga. New York and online.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  if (params.get('sent') === '1') {
+    document.getElementById('fb-form-wrap').hidden = true;
+    document.getElementById('fb-thanks').hidden = false;
+  }
+  document.getElementById('fb-class').value = params.get('class') || '';
+
+  const hints = { '5 stars': 'Wonderful, thank you', '4 stars': 'Thank you', '3 stars': 'Thank you for being honest', '2 stars': 'Thank you, I would love to know more', '1 star': 'Thank you, please tell me what I can do better' };
+  const hint = document.getElementById('stars-hint');
+  const error = document.getElementById('fb-error');
+  document.querySelectorAll('input[name=rating]').forEach(r => r.addEventListener('change', () => {
+    hint.textContent = hints[r.value];
+    error.textContent = '';
+  }));
+
+  document.getElementById('fb-form').addEventListener('submit', e => {
+    if (!document.querySelector('input[name=rating]:checked')) {
+      e.preventDefault();
+      error.textContent = 'Tap a star first';
+    }
+  });
+</script>
+</body>
+</html>
