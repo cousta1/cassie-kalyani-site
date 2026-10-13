@@ -9,6 +9,7 @@ Location: New York and online (live on Zoom). Private sessions are available in 
 ## Pages
 
 - [Home](https://cassie-kalyani-site.vercel.app/): Offerings, prices, booking links, what a class feels like, upcoming waitlists, FAQ and contact form.
+- [Yoga for Fertility](https://cassie-kalyani-site.vercel.app/yoga-for-fertility.html): Dedicated page for the online Yoga for Fertility small group: who it is for (IVF, IUI, trying naturally, between cycles, after a loss), what happens in the 75 minutes, the 6-week series and drop-in, and fertility-specific questions. Supports women alongside medical care; not a medical treatment.
 - [About Cassie Kalyāṇī](https://cassie-kalyani-site.vercel.app/about.html): Background, lineage, the meaning of the name Kalyāṇī, and her full path of study.
 - [Contact form](https://cassie-kalyani-site.vercel.app/#contact): Write to Cassie directly. She reads every message herself. Use this for the karma class, the beginner immersion waitlist, or any question.
 

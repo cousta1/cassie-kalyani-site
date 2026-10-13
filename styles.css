@@ -135,7 +135,7 @@ h3 { font-size: 1.65rem; }
 
 /* ── expect ── */
 .expect { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--veil); }
-.expect h4 { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--pearl); margin-bottom: 10px; }
+.expect h4, .expect-h { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--pearl); margin-bottom: 10px; }
 .expect p { color: var(--mist); font-size: 0.95rem; }
 @media (max-width: 640px) { .expect { grid-template-columns: 1fr; gap: 32px; } }
 
