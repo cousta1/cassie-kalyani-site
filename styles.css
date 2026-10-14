@@ -61,6 +61,8 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .logo span { color: var(--seaglass); margin: 0 0.15em; }
 nav ul { list-style: none; display: flex; gap: 22px; align-items: center; }
 nav ul a { text-decoration: none; color: var(--mist); font-size: 0.95rem; }
+nav ul a:not(.nav-book) { display: inline-block; padding: 8px 2px; }
+[id] { scroll-margin-top: 84px; }
 nav ul a:hover { color: var(--pearl); }
 nav .nav-book {
   color: var(--on-moon); background: var(--moon);
@@ -220,7 +222,7 @@ section { padding: 112px 0; }
 form { display: grid; gap: 16px; }
 label { display: grid; gap: 6px; font-size: 0.95rem; color: var(--mist); }
 input, select, textarea {
-  font: inherit; color: var(--pearl); background: #f7f3f4;
+  font: inherit; font-size: 16px; color: var(--pearl); background: #f7f3f4;
   border: 1px solid var(--veil); border-radius: 12px; padding: 12px 14px;
 }
 textarea { min-height: 130px; resize: vertical; }
@@ -252,7 +254,7 @@ details[open] > .faq-q::after { content: '−'; }
 .social-strip .wrap { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
 .social-strip p { color: var(--mist); font-size: 0.95rem; }
 .social-strip ul { list-style: none; display: flex; gap: 20px; }
-.social-strip ul a { text-decoration: none; color: var(--pearl); font-size: 0.95rem; }
+.social-strip ul a { display: inline-block; padding: 10px 0; text-decoration: none; color: var(--pearl); font-size: 0.95rem; }
 .social-strip ul a:hover { color: var(--moon); }
 
 /* ── footer ── */
@@ -261,6 +263,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
 footer .logo { color: var(--pearl); display: block; margin-bottom: 6px; }
 footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 18px; }
 footer a { text-decoration: none; }
+footer ul a { display: inline-block; padding: 10px 0; }
 footer a:hover { color: var(--pearl); }
 
 /* ── about page ── */
