@@ -123,8 +123,10 @@ h3 { font-size: 1.65rem; }
   line-height: 1;
 }
 @media (max-width: 640px) {
-  .benefits-list li.sep { display: none; }
-  .benefits-list { gap: 10px 20px; }
+  .benefits-list { row-gap: 4px; }
+  .benefits-list li { padding: 4px 10px; }
+  .benefits-list li.sep { padding: 0 2px; }
+  .benefits-list li.sep:nth-child(4) { flex-basis: 100%; height: 0; padding: 0; overflow: hidden; color: transparent; }
 }
 
 /* ── thread ── */
