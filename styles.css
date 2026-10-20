@@ -1,29 +1,31 @@
-/* Cassie ☽ Kalyāṇī — mauve stone by day, deep plum by night */
+/* Cassie ☽ Kalyāṇī: warm blush by day, berry plum by night */
 :root {
-  --tide: #f0ebee;        /* soft mauve page */
-  --dusk: #e6dfe3;        /* raised surfaces, photo frames */
-  --veil: #d1c4ca;        /* hairlines */
-  --mist: #7a6570;        /* secondary text */
-  --pearl: #2e1f2a;       /* primary text */
-  --seaglass: #9c7080;    /* small labels, dusty rose */
-  --moon: #4a2040;        /* primary buttons, deep plum */
+  --tide: #f7efec;        /* warm blush page */
+  --dusk: #efe1e0;        /* raised surfaces, photo frames */
+  --veil: #e3d0d0;        /* hairlines */
+  --mist: #6f5662;        /* secondary text */
+  --pearl: #3a2232;       /* primary text */
+  --seaglass: #9a4a64;    /* labels, rose berry */
+  --moon: #8a3b62;        /* primary buttons, berry */
   --on-moon: #ffffff;
-  --ghost-line: #d1c4ca;
+  --ghost-line: #e3d0d0;
+  --gold: #c4955a;        /* stars and ornaments, decorative only */
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Jost', system-ui, sans-serif;
 }
 
-/* deep plum bands */
+/* plum bands */
 .night {
-  --tide: #27182a;
-  --dusk: #341f38;
-  --veil: #4a3050;
-  --mist: #c0a8b8;
-  --pearl: #f2ecef;
-  --seaglass: #d4b0c4;
-  --moon: #e8d0de;
-  --on-moon: #27182a;
-  --ghost-line: #5c3f60;
+  --tide: #4a2040;
+  --dusk: #5a2c4f;
+  --veil: #6e3d62;
+  --mist: #e6cfdb;
+  --pearl: #fbf3f6;
+  --seaglass: #e9c08f;
+  --moon: #f6dfe9;
+  --on-moon: #4a2040;
+  --ghost-line: #8c5a7e;
+  --gold: #e9c08f;
   background: var(--tide);
   color: var(--pearl);
 }
@@ -117,7 +119,7 @@ h3 { font-size: 1.65rem; }
   padding: 6px 24px;
 }
 .benefits-list li.sep {
-  color: var(--seaglass);
+  color: var(--gold);
   font-size: 0.6rem;
   padding: 0 8px;
   line-height: 1;
@@ -224,7 +226,7 @@ section { padding: 112px 0; }
 form { display: grid; gap: 16px; }
 label { display: grid; gap: 6px; font-size: 0.95rem; color: var(--mist); }
 input, select, textarea {
-  font: inherit; font-size: 16px; color: var(--pearl); background: #f7f3f4;
+  font: inherit; font-size: 16px; color: var(--pearl); background: #fdf8f7;
   border: 1px solid var(--veil); border-radius: 12px; padding: 12px 14px;
 }
 textarea { min-height: 130px; resize: vertical; }
