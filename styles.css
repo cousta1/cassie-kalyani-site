@@ -10,7 +10,7 @@
   --on-moon: #ffffff;
   --ghost-line: #e3d0d0;
   --gold: #c4955a;        /* stars and ornaments, decorative only */
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  --serif: 'Fraunces', Georgia, serif;
   --sans: 'Jost', system-ui, sans-serif;
 }
 
@@ -39,6 +39,7 @@ body {
   font-weight: 300;
   font-size: 17px;
   line-height: 1.65;
+  font-variation-settings: "SOFT" 100;
   overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
@@ -57,7 +58,7 @@ nav {
 }
 nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
 .logo {
-  font-family: var(--serif); font-size: 1.35rem; font-weight: 400;
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 400;
   text-decoration: none; letter-spacing: 0.02em; white-space: nowrap;
 }
 .logo span { color: var(--seaglass); margin: 0 0.15em; }
@@ -78,9 +79,9 @@ nav .nav-book:hover { color: var(--on-moon); opacity: .88; }
 
 /* ── type ── */
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; }
-h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); font-weight: 300; letter-spacing: -0.01em; }
-h2 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 300; }
-h3 { font-size: 1.65rem; }
+h1 { font-size: clamp(2.4rem, 6.2vw, 4.1rem); font-weight: 300; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.85rem, 4.4vw, 2.75rem); font-weight: 300; }
+h3 { font-size: 1.5rem; }
 .lede { font-size: 1.15rem; color: var(--mist); max-width: 34em; }
 .prose p { max-width: 36em; margin-bottom: 1.1em; }
 .prose p:last-child { margin-bottom: 0; }
@@ -141,7 +142,7 @@ h3 { font-size: 1.65rem; }
 
 /* ── expect ── */
 .expect { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--veil); }
-.expect h4, .expect-h { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--pearl); margin-bottom: 10px; }
+.expect h4, .expect-h { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--pearl); margin-bottom: 10px; }
 .expect p { color: var(--mist); font-size: 0.95rem; }
 @media (max-width: 640px) { .expect { grid-template-columns: 1fr; gap: 32px; } }
 
