@@ -1,4 +1,4 @@
-# robots.txt for Cassie Kalyāṇī, Hatha Yoga
+# robots.txt for Cassie Kalyānī, Hatha Yoga
 # All crawlers, including search engines and AI assistants, are welcome.
 
 User-agent: *
