@@ -177,6 +177,24 @@
   </div>
 </section>
 
+<section class="practice-video-section" style="padding-top:0">
+  <div class="wrap">
+    <div class="practice-video-grid">
+      <div class="video-facade" data-video="JQIoAQ4htag">
+        <img src="images/fertility-practice-poster.jpg" alt="Cassie in child's pose on a purple mat in her home studio" width="540" height="960" loading="lazy">
+        <button type="button" class="video-play" aria-label="Play a short practice with Cassie">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <div>
+        <h2>Practice with me</h2>
+        <p class="lede" style="margin-top:14px">A little moment on the mat from my personal practice. Press play, and if it resonates with you, I'd love to meet you in class.</p>
+        <div class="btn-row" style="margin-top:28px"><a class="btn btn-ghost" href="/?interest=Yoga%20for%20Fertility#contact">I have a question</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section style="padding-top:0">
   <div class="wrap">
     <div class="section-head">
@@ -288,5 +306,18 @@
     </ul>
   </div>
 </footer>
+<script>
+document.querySelectorAll('.video-facade').forEach(function (el) {
+  el.querySelector('.video-play').addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + el.dataset.video + '?autoplay=1&playsinline=1&rel=0';
+    f.title = 'A short practice with Cassie';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    el.replaceChildren(f);
+  });
+});
+</script>
 </body>
+
 </html>

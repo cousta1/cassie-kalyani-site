@@ -284,3 +284,12 @@ footer a:hover { color: var(--pearl); }
 .path .status { color: var(--seaglass); font-size: 0.95rem; }
 .name-meaning { text-align: center; padding: 72px 0; }
 .name-meaning .serif-quote { max-width: 26em; margin: 18px auto 0; }
+
+/* Short practice video (click to play, nothing from YouTube loads until then) */
+.practice-video-grid { display: grid; grid-template-columns: 300px 1fr; gap: 72px; align-items: center; max-width: 860px; }
+.video-facade { position: relative; aspect-ratio: 9 / 16; border-radius: 6px; overflow: hidden; background: var(--dusk); }
+.video-facade img, .video-facade iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.video-play { position: absolute; left: 50%; top: 64%; transform: translate(-50%, -50%); width: 68px; height: 68px; border-radius: 50%; border: 0; background: var(--moon); color: var(--on-moon); display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 24px rgba(58, 34, 50, .25); transition: transform .2s; }
+.video-play:hover { transform: translate(-50%, -50%) scale(1.06); }
+.video-play svg { margin-left: 3px; }
+@media (max-width: 760px) { .practice-video-grid { grid-template-columns: 1fr; gap: 32px; } .video-facade { max-width: 300px; } }

@@ -588,6 +588,13 @@
     });
   });
 
+  // Links from other pages can preselect it too, e.g. /?interest=Yoga%20for%20Fertility#contact
+  const askedInterest = new URLSearchParams(location.search).get('interest');
+  if (askedInterest) {
+    const sel = document.getElementById('interest');
+    [...sel.options].forEach(o => { if (o.text === askedInterest) sel.value = o.text; });
+  }
+
   // Show a thank-you note when redirected back after submission.
   if (new URLSearchParams(location.search).get('sent') === '1') {
     const note = document.getElementById('form-note');
