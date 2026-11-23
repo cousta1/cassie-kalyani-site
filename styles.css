@@ -282,6 +282,9 @@ footer a:hover { color: var(--pearl); }
 .path h3 { font-size: 1.45rem; }
 .path p { color: var(--mist); }
 .path .status { color: var(--seaglass); font-size: 0.95rem; }
+.path li.path-label { padding-bottom: 18px; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
+.path li.path-label::before { display: none; }
+.path li.path-label:not(:first-child) { padding-top: 8px; }
 .name-meaning { text-align: center; padding: 72px 0; }
 .name-meaning .serif-quote { max-width: 26em; margin: 18px auto 0; }
 
